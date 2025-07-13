@@ -10,6 +10,7 @@ from ui3 import UI3
 from ui4 import UI4
 from ui5 import UI5
 from ui6 import UI6
+from ui9 import UI9
 
 class Game:
     def __init__(self):
@@ -26,6 +27,7 @@ class Game:
         self.mouse_leftdown=False
         self.mouse_wheel=False
         self.mouse_pos=False
+        self.pre_pos=False
         self.press_pos=False
         self.gaming=False
         self.screen_size=None
@@ -37,6 +39,7 @@ class Game:
         self.ui3=UI3(self)
         self.ui5=UI5(self)
         self.ui6=UI6(self)
+        self.ui9=UI9(self)
         self.navigator=Navigator(self)
         self.ui4=UI4(self)
 
@@ -53,7 +56,7 @@ class Game:
             if self.gaming:
                 self.run_game()
                 pygame.display.flip()
-                self.clock.tick(30)
+                self.clock.tick(60)
         
     def check_event(self):
         self.screen_size=self.screen.get_size()
@@ -71,8 +74,10 @@ class Game:
                     self.mouse_wheel=False
                 else:
                     self.mouse_leftdown=True
+                    self.pre_pos=self.mouse_pos
             if event.type==pygame.MOUSEBUTTONUP and self.mouse_leftdown:
-                self.press_pos=self.mouse_pos
+                self.press_pos=self.pre_pos
+                self.pre_pos=False
                 self.mouse_leftdown=False
           
     
@@ -106,11 +111,15 @@ class Game:
             self.ui6.display()
             if self.press_pos:
                 self.ui6.update(self.press_pos)
-        elif isinstance(self.st,tuple) and self.st[0]==8:#level 1
+        elif isinstance(self.st,tuple) and self.st[0]==8:#levels
             self.screen.fill((255,255,255))
-            self.navigator.update(self.st[1])
+            self.navigator.update()
             if self.press_pos:
                 self.navigator.press_pos=self.press_pos
+        elif self.st==9:
+            self.ui9.display()
+            if self.press_pos:
+                self.ui9.update(self.press_pos)
 
         self.press_pos=False
 

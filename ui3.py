@@ -9,9 +9,9 @@ class UI3:
         font=pygame.font.Font('res/font/DroidSansChinese.ttf',45)
         texts=['软件名：迷宫大挑战',
             '版本：1.0.0',
-            '作者：Byte豚',
+            '作者：Byte豚/MRY/MRYcn',
             '联系方式：yrk202105152030@outlook.com',
-            '知识产权：开源软件',
+            'License: MIT License',
             '获取更新：联系开发者/github'
             ]
         self.about_texts=[font.render(text,True,(0,0,0),None) for text in texts]

@@ -6,13 +6,14 @@ class UI4:
     def __init__(self,game):
         self.game=game
         self.mm=game.navigator.mm
-        
+
+        self.suf_rects=[]
         self.back_rect=None
         font1=pygame.font.Font('res/font/DroidSansChinese.ttf',45)
         self.back=font1.render('«返回',True,(0,0,0),None)
 
         level_num=self.mm.get_level_num()
-        self.sufs=[pygame.Surface((200,400)) for i in range(level_num)]
+        self.sufs=[pygame.Surface((200,400)) for _ in range(level_num)]
         for suf in self.sufs:
             suf.fill((252,232,55))
 
@@ -36,4 +37,5 @@ class UI4:
         for i,rect in enumerate(self.suf_rects):
             if rect.collidepoint(press_pos):
                 self.game.st=(8,i+1)
+                self.mm.load_map(i)
                 break

@@ -19,21 +19,24 @@ class Navigator:
         self.mm=Map_Manager(self)
         self.end=None
     
-    def update(self,level):#st:game.st
-        self.mm.update(level)
+    def update(self):#st:game.st
+        self.mm.update()
+        if self.game.st==4:
+            return
         if self.game.beginning:
             self.update0()
             if not self.end:
-                for suf in self.mm.maps_sufs[level-1]:
+                for suf in self.mm.map_sufs:
                     if suf.__class__.__name__=='End':
                         self.end=suf
                         break
         if self.end.loc==(600,255):
-            self.game.st=4
+            self.game.st=9
             self.end=None
             self.game.beginning=True
+            return
             
-        self.mm.display(level)
+        self.mm.display()
         
         self.game.blit_to_sc(self.img,self.loc,-90+self.ang)
             
