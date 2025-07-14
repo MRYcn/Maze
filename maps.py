@@ -22,7 +22,7 @@ class Map_Manager:
         font=pygame.font.Font('res/font/DroidSansChinese.ttf',30)
         self.back_font = font.render('«返回', True, (0, 0, 0), None)
 
-        map_files=['map1.json','map2.json','map3.json']
+        map_files=['map1.json','map2.json','map3.json','map4.json']
         self.map_dicts=[]
         for file in map_files:
             with open(file,'r') as f:
@@ -67,7 +67,7 @@ class Map_Manager:
         self.game.blit_to_sc(self.back_font,(60,20),0)
 
     def get_level_num(self):
-        return 3
+        return 4
 
     def judge_action(self):
         ang=self.round_ang()

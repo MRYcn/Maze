@@ -27,7 +27,6 @@ class Game:
         self.mouse_leftdown=False
         self.mouse_wheel=False
         self.mouse_pos=False
-        self.pre_pos=False
         self.press_pos=False
         self.gaming=False
         self.screen_size=None
@@ -73,13 +72,7 @@ class Game:
                 elif self.mouse_wheel:
                     self.mouse_wheel=False
                 else:
-                    self.mouse_leftdown=True
-                    self.pre_pos=self.mouse_pos
-            if event.type==pygame.MOUSEBUTTONUP and self.mouse_leftdown:
-                self.press_pos=self.pre_pos
-                self.pre_pos=False
-                self.mouse_leftdown=False
-          
+                    self.press_pos=self.mouse_pos
     
     def run_game(self):  ##testing
         self.screen.fill((99,205,255))
