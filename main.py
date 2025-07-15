@@ -1,4 +1,5 @@
 import sys
+from datetime import datetime
 import pygame
 import pygame.transform as pt
 
@@ -11,6 +12,7 @@ from ui4 import UI4
 from ui5 import UI5
 from ui6 import UI6
 from ui9 import UI9
+from data import Data_Manager
 
 class Game:
     def __init__(self):
@@ -45,7 +47,8 @@ class Game:
         self.st=0
         self.beginning=True
 
-        
+        self.dm=Data_Manager()
+        self.on_game_start()
     
     def run(self):
         self.gaming=True
@@ -65,6 +68,7 @@ class Game:
         
         for event in pygame.event.get():
             if event.type==pygame.QUIT:
+                self.on_game_exit()
                 self.gaming=False
             if event.type==pygame.MOUSEBUTTONDOWN:
                 if event.button in [4,5]:
@@ -137,7 +141,16 @@ class Game:
         cy=loc[1]*selfh/self.REF_HEIGHT
         rect.center=(int(cx),int(cy))
         return self.screen.blit(img,rect)
-        
+
+    def on_game_start(self):
+        self.data=self.dm.load_data()
+        self.data['user']['last_login']=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.data['user']['is_online']=True
+        self.dm.save_data(self.data)
+
+    def on_game_exit(self):
+        self.data['user']['is_online']=False
+        self.dm.save_data(self.data)
 
 if __name__=='__main__':
     app=Game()
