@@ -12,6 +12,7 @@ from ui4 import UI4
 from ui5 import UI5
 from ui6 import UI6
 from ui9 import UI9
+from ui10 import UI10
 from data import Data_Manager
 
 class Game:
@@ -33,7 +34,10 @@ class Game:
         self.gaming=False
         self.screen_size=None
         self.w=self.h=None
-        
+
+        self.dm=Data_Manager()
+        self.on_game_start()
+
         self.ui0=UI0(self)
         self.ui1=UI1(self)
         self.ui2=UI2(self)
@@ -41,15 +45,13 @@ class Game:
         self.ui5=UI5(self)
         self.ui6=UI6(self)
         self.ui9=UI9(self)
+        self.ui10=UI10(self)
         self.navigator=Navigator(self)
         self.ui4=UI4(self)
 
         self.st=0
         self.beginning=True
 
-        self.dm=Data_Manager()
-        self.on_game_start()
-    
     def run(self):
         self.gaming=True
         while self.gaming:
@@ -113,10 +115,14 @@ class Game:
             self.navigator.update()
             if self.press_pos:
                 self.navigator.press_pos=self.press_pos
-        elif self.st==9:
+        elif self.st==9:#checkout page
             self.ui9.display()
             if self.press_pos:
                 self.ui9.update(self.press_pos)
+        elif self.st==10:#user info
+            self.ui10.display()
+            if self.press_pos:
+                self.ui10.update(self.press_pos)
 
         self.press_pos=False
 
