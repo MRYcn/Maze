@@ -16,12 +16,6 @@ class Map_Manager:
         self.RW=self.game.REF_WIDTH
         self.RH=self.game.REF_HEIGHT
 
-        self.back_rect = None
-        self.back_suf = pygame.Surface((100, 35))
-        self.back_suf.fill((252, 232, 55))
-        font=pygame.font.Font('res/font/DroidSansChinese.ttf',30)
-        self.back_font = font.render('«返回', True, (0, 0, 0), None)
-
         map_files=['map1.json','map2.json','map3.json','map4.json']
         self.map_dicts=[]
         for file in map_files:
@@ -36,13 +30,6 @@ class Map_Manager:
         self.map_sufs=[]
     
     def update(self):#st: game.st
-        if self.back_rect and self.navigator.press_pos and self.back_rect.collidepoint(self.navigator.press_pos):
-            self.game.st=4
-            self.navigator.press_pos=False
-            self.game.beginning=True
-            self.navigator.end=None
-            self.navigator.moving=False
-            return
         if not self.navigator.moving and self.navigator.press_pos:
             self.action=self.judge_action()
             if self.action==None:
@@ -63,8 +50,6 @@ class Map_Manager:
     def display(self):#st: game.st
         for el in self.map_sufs:
             el.display()
-        self.back_rect=self.game.blit_to_sc(self.back_suf,(60,20),0)
-        self.game.blit_to_sc(self.back_font,(60,20),0)
 
     def get_level_num(self):
         return 4

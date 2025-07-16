@@ -11,6 +11,7 @@ from ui3 import UI3
 from ui4 import UI4
 from ui5 import UI5
 from ui6 import UI6
+from ui7 import UI7
 from ui9 import UI9
 from ui10 import UI10
 from data import Data_Manager
@@ -38,16 +39,17 @@ class Game:
         self.dm=Data_Manager()
         self.on_game_start()
 
+        self.navigator=Navigator(self)
         self.ui0=UI0(self)
         self.ui1=UI1(self)
         self.ui2=UI2(self)
         self.ui3=UI3(self)
+        self.ui4=UI4(self)
         self.ui5=UI5(self)
         self.ui6=UI6(self)
+        self.ui7=UI7(self )
         self.ui9=UI9(self)
         self.ui10=UI10(self)
-        self.navigator=Navigator(self)
-        self.ui4=UI4(self)
 
         self.st=0
         self.beginning=True
@@ -110,11 +112,10 @@ class Game:
             self.ui6.display()
             if self.press_pos:
                 self.ui6.update(self.press_pos)
-        elif isinstance(self.st,tuple) and self.st[0]==8:#levels
-            self.screen.fill((255,255,255))
-            self.navigator.update()
+        elif isinstance(self.st,tuple) and self.st[0]==7:#levels
+            self.ui7.display()
             if self.press_pos:
-                self.navigator.press_pos=self.press_pos
+                self.ui7.update(self.press_pos)
         elif self.st==9:#checkout page
             self.ui9.display()
             if self.press_pos:

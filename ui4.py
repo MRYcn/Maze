@@ -49,7 +49,7 @@ class UI4:
             self.game.st=1
         for i,rect in enumerate(self.suf_rects):
             if rect.collidepoint(press_pos):
-                self.game.st=(8,i+1)
+                self.game.st=(7,i+1)
                 self.mm.load_map(i)
                 break
         if self.slider_rect.collidepoint(press_pos):
