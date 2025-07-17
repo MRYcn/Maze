@@ -115,35 +115,35 @@ class Map_Manager:
     def load_map(self,ind):
         map_dict=self.map_dicts[ind]
         self.map_sufs=[]
-        if 'straight' in map_dict:
+        if 'straight' in map_dict.keys():
             for attr in map_dict['straight']:
                 straight = Straight(self.game)
                 straight.loc = (attr[0], attr[1])
                 straight.ang = attr[2]
                 self.map_sufs.append(straight)
 
-        if 'impasse' in map_dict:
+        if 'impasse' in map_dict.keys():
             for attr in map_dict['impasse']:
                 impasse = Impasse(self.game)
                 impasse.loc = (attr[0], attr[1])
                 impasse.ang = attr[2]
                 self.map_sufs.append(impasse)
 
-        if 'turn' in map_dict:
+        if 'turn' in map_dict.keys():
             for attr in map_dict['turn']:
                 turn = Turn(self.game)
                 turn.loc = (attr[0], attr[1])
                 turn.ang = attr[2]
                 self.map_sufs.append(turn)
 
-        if 'three' in map_dict:
+        if 'three' in map_dict.keys():
             for attr in map_dict['three']:
                 three = Three(self.game)
                 three.loc = (attr[0], attr[1])
                 three.ang = attr[2]
                 self.map_sufs.append(three)
 
-        if 'four' in map_dict:
+        if 'four' in map_dict.keys():
             for attr in map_dict['four']:
                 four = Four(self.game)
                 four.loc = (attr[0], attr[1])

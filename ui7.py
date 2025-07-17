@@ -13,29 +13,10 @@ class UI7:
         self.back_text = self.font.render('«返回', True, (0, 0, 0), None)
         self.back_suf = pygame.Surface((100, 35))
         self.back_suf.fill((252, 232, 55))
-        self.guidance_dict={
-            1:[
-                ['navigator',(60,100)],
-                ['：车标',(135,100)],
-                ['straight',(60,150)],
-                ['：黑线为道路',(185,150)],
-                ['边，中间为道路',(185,200)],
-                ['start',(60,250)],
-                ['：起点',(135,250)],
-                ['end',(60,300)],
-                ['：终点',(135,300)],
-                ['尝试在车标右',(1050,100)],
-                ['侧点击屏幕，',(1050,150)],
-                ['使车标前进。',(1050,200)]
-            ],
-            2:[
-                ['车标可以在道路中',(1050,100)],
-                ['前进。游戏开始时',(1050,150)],
-                ['你可以选择行驶方',(1050,200)],
-                ['向，开始后将不能',(1050,250)],
-                ['调头（180°旋转）',(1050,300)]
-            ]
-        }
+        self.guidance_dict={}
+        for i,map_dict in enumerate(self.navigator.mm.map_dicts):
+            if 'guidance' in map_dict.keys():
+                self.guidance_dict[i+1]=map_dict['guidance']
         self.current_guidance_suf_locs={}
 
     def display(self):
