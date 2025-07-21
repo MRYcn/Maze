@@ -6,7 +6,7 @@ from impasse import Impasse
 from turn import Turn
 from three import Three
 from four import Four
-import pygame
+from floor import Floor
 
 #map loader and manager
 
@@ -68,6 +68,8 @@ class Map_Manager:
                 elif suf.__class__.__name__=='Three' and suf.ang not in (ang-90,ang+270):
                     action=ang
                 elif suf.__class__.__name__=='Four':
+                    action=ang
+                elif suf.__class__.__name__=='Floor' and ang==self.navigator.ang:
                     action=ang
                 break
         if abs(self.navigator.ang-ang)==180:
@@ -149,6 +151,13 @@ class Map_Manager:
                 four.loc = (attr[0], attr[1])
                 four.ang = attr[2]
                 self.map_sufs.append(four)
+
+        if 'floor' in map_dict.keys():
+            for attr in map_dict['floor']:
+                floor=Floor(self.game)
+                floor.loc= (attr[0], attr[1])
+                floor.ang = attr[2]
+                self.map_sufs.append(floor)
 
         start = Start(self.game)
         start.loc = (map_dict['start'][0], map_dict['start'][1])

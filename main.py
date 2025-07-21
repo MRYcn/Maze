@@ -1,5 +1,9 @@
 import sys
 from datetime import datetime
+fps=[]
+d1=datetime.now()
+num=0
+from threading import Thread
 import pygame
 import pygame.transform as pt
 
@@ -37,19 +41,12 @@ class Game:
         self.w=self.h=None
 
         self.dm=Data_Manager()
+        self.data=None
         self.on_game_start()
 
-        self.navigator=Navigator(self)
         self.ui0=UI0(self)
-        self.ui1=UI1(self)
-        self.ui2=UI2(self)
-        self.ui3=UI3(self)
-        self.ui4=UI4(self)
-        self.ui5=UI5(self)
-        self.ui6=UI6(self)
-        self.ui7=UI7(self )
-        self.ui9=UI9(self)
-        self.ui10=UI10(self)
+        self.init_thread=Thread(target=self.init_uis)
+        self.init_thread.start()
 
         self.st=0
         self.beginning=True
@@ -57,12 +54,22 @@ class Game:
     def run(self):
         self.gaming=True
         while self.gaming:
-            
             self.check_event()
             if self.gaming:
                 self.run_game()
                 pygame.display.flip()
-                self.clock.tick(60)
+                self.clock.tick(30)
+                global fps, d1, num
+                num+=1
+                d2=datetime.now()
+                d=d2-d1
+                if d.seconds>=1:
+                    fps.append(num)
+                    num=0
+                    d1=d2
+            else:
+                print('fps',fps)
+
         
     def check_event(self):
         self.screen_size=self.screen.get_size()
@@ -89,14 +96,17 @@ class Game:
             if self.press_pos:
                 self.ui0.update(self.press_pos)
         elif self.st==1:#mode selection page
+            self.init_thread.join()
             self.ui1.display()
             if self.press_pos:
                 self.ui1.update(self.press_pos)
         elif self.st==2:#introduction page
+            self.init_thread.join()
             self.ui2.display()
             if self.press_pos:
                 self.ui2.update(self.press_pos)
         elif self.st==3:#about page
+            self.init_thread.join()
             self.ui3.display()
             if self.press_pos:
                 self.ui3.update(self.press_pos)
@@ -158,6 +168,18 @@ class Game:
     def on_game_exit(self):
         self.data['user']['is_online']=False
         self.dm.save_data(self.data)
+
+    def init_uis(self):
+        self.navigator = Navigator(self)
+        self.ui1 = UI1(self)
+        self.ui2 = UI2(self)
+        self.ui3 = UI3(self)
+        self.ui4 = UI4(self)
+        self.ui5 = UI5(self)
+        self.ui6 = UI6(self)
+        self.ui7 = UI7(self)
+        self.ui9 = UI9(self)
+        self.ui10 = UI10(self)
 
 if __name__=='__main__':
     app=Game()
