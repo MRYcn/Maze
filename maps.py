@@ -7,6 +7,7 @@ from turn import Turn
 from three import Three
 from four import Four
 from floor import Floor
+from arrow import Arrow
 
 #map loader and manager
 
@@ -16,7 +17,27 @@ class Map_Manager:
         self.RW=self.game.REF_WIDTH
         self.RH=self.game.REF_HEIGHT
 
-        map_files=['map1.json','map2.json','map3.json','map4.json']
+        map5_dict={
+            'start':[600,255],
+            'end':[800,355],
+            'impasse':[[600,255,0]],
+            'straight':[[800,155,90],[900,255,0],[800,355,90]],
+            'turn':[[700,155,90],[900,155,0],[700,355,180],[900,355,270]],
+            'three':[[700,255,270]],
+            'arrow':[[700,255,0,'red_turn',True]]
+        }
+        map5_gid=[
+            ['箭头表示仅允许前',[1080,155]],
+            ['进的方向，此要求',[1080,205]],
+            ['仅对沿箭尾方向进',[1080,255]],
+            ['入的情况有效。',[1065,305]]
+        ]
+        map5_dict['guidance']=map5_gid
+        with open('map5.json','w') as f:
+            json.dump(map5_dict,f)
+            print('written')
+
+        map_files=['map1.json','map2.json','map3.json','map4.json','map5.json']
         self.map_dicts=[]
         for file in map_files:
             with open(file,'r') as f:
@@ -52,12 +73,15 @@ class Map_Manager:
             el.display()
 
     def get_level_num(self):
-        return 4
+        return 5
 
     def judge_action(self):
         ang=self.round_ang()
         action = None
+        arrow=None
         for suf in self.map_sufs:
+            if suf.__class__.__name__=='Arrow' and suf.loc in [(590,245),(590,265),(610,245),(610,265),(600,255)] and suf.ang==self.navigator.ang:
+                arrow=suf
             if suf.loc == (600, 255):
                 if suf.__class__.__name__=='Straight' and abs(suf.ang - ang+90) in [0, 180]:
                     action = ang
@@ -71,9 +95,15 @@ class Map_Manager:
                     action=ang
                 elif suf.__class__.__name__=='Floor' and ang==self.navigator.ang:
                     action=ang
-                break
         if abs(self.navigator.ang-ang)==180:
             action=None
+        elif arrow and 'straight' in arrow.type and action!=arrow.ang:
+            action=None
+        elif arrow and 'turn' in arrow.type:
+            if arrow.flip and action not in (arrow.ang+90,arrow.ang-270):
+                action=None
+            elif not arrow.flip and action not in (arrow.ang-90,arrow.ang+270):
+                action=None
         return action
 
     def move(self,action,map_sufs):
@@ -92,7 +122,11 @@ class Map_Manager:
 
     def round_ang(self):
         x, y = self.navigator.press_pos
-        dx, dy = x - 600 * self.game.w / self.RW, 255 * self.game.h / self.RH - y
+        if self.game.w / self.game.h >= 2.19:
+            x,y=x * self.RH / self.game.h,y * self.RH / self.game.h
+        else:
+            x,y=x * self.RW / self.game.w,y * self.RW / self.game.w
+        dx,dy=x-600,255-y
         if dx == 0:
             if dy > 0:
                 ang = 90
@@ -120,7 +154,7 @@ class Map_Manager:
         if 'straight' in map_dict.keys():
             for attr in map_dict['straight']:
                 straight = Straight(self.game)
-                straight.loc = (attr[0], attr[1])
+                straight.loc = (attr[0], attr[1])### 0: loc[0], 1: loc[1], 2: ang(, 3: type)
                 straight.ang = attr[2]
                 self.map_sufs.append(straight)
 
@@ -158,6 +192,13 @@ class Map_Manager:
                 floor.loc= (attr[0], attr[1])
                 floor.ang = attr[2]
                 self.map_sufs.append(floor)
+
+        if 'arrow' in map_dict.keys():
+            for attr in map_dict['arrow']:
+                arrow=Arrow(self.game,attr[3:])
+                arrow.loc=(attr[0],attr[1])
+                arrow.ang=attr[2]
+                self.map_sufs.append(arrow)
 
         start = Start(self.game)
         start.loc = (map_dict['start'][0], map_dict['start'][1])

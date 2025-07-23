@@ -42,7 +42,11 @@ class Navigator:
             
     def update0(self):
         x,y=self.game.mouse_pos
-        dx,dy=x-600*self.game.w/self.RW,255*self.game.h/self.RH-y
+        if self.game.w / self.game.h >= 2.19:
+            x,y=x * self.RH / self.game.h, y * self.RH / self.game.h
+        else:
+            x,y=x * self.game.REF_WIDTH / self.game.w,y * self.game.REF_WIDTH / self.game.w
+        dx,dy=x-600,255-y
         if dx==0:
             if dy>0:
                 ang=90

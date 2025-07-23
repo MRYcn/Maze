@@ -138,7 +138,7 @@ class Game:
         self.press_pos=False
 
      
-    def blit_to_sc(self,img,loc,ang):
+    def blit_to_sc(self,img,loc,ang,yflip=False):
         """zoom and blit"""
         #loc: center location
         #ang: angle to rotate
@@ -153,6 +153,7 @@ class Game:
         h=int(h*selfh/self.REF_HEIGHT)
         img=pt.scale(img,(w,h))
         img=pt.rotate(img,ang)
+        img=pt.flip(img,False,yflip)
         rect=img.get_rect()
         cx=loc[0]*selfw/self.REF_WIDTH
         cy=loc[1]*selfh/self.REF_HEIGHT
