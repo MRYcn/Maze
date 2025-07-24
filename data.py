@@ -36,7 +36,7 @@ class Data_Manager:
                 user_v=version.parse(data['version'])
                 new_v=version.parse(self.DEF_DATA['version'])
                 if new_v>user_v:
-                    data['version']=new_v['version']
+                    data['version']=self.DEF_DATA['version']
                     for key1 in self.DEF_DATA.keys():
                         if key1 not in data:
                             data[key1]=self.DEF_DATA[key1]
