@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="添加注销页面，优化用户数据读取错误处理，添加地图进度保存和显示。" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MRYcn&quot;
+  }
+}</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="0494e662-ebc0-4885-a844-6c99689a064e" />
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MRYcn/Maze.git&quot;,
+    &quot;accountId&quot;: &quot;0494e662-ebc0-4885-a844-6c99689a064e&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2zX8p652issjw860Qzg1bnDQ4qW" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.data.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.maps.executor": "Debug",
+    "Python.ui10.executor": "Run",
+    "Python.ui6.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "last_opened_file_path": "/home/mry/下载/Maze",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Maze" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-598b0484d0b5-e2d783800521-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.26927.74" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="" />
+      <created>1751866237341</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751866237341</updated>
+    </task>
+    <task id="LOCAL-00001" summary="initial push">
+      <option name="closed" value="true" />
+      <created>1752391108537</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752391108537</updated>
+    </task>
+    <task id="LOCAL-00002" summary="添加过关界面；禁止180度调头">
+      <option name="closed" value="true" />
+      <created>1752397224218</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752397224218</updated>
+    </task>
+    <task id="LOCAL-00003" summary="UI4滚轮判断、反应取消鼠标滚轮，用鼠标点击代替。">
+      <option name="closed" value="true" />
+      <created>1752480635346</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752480635346</updated>
+    </task>
+    <task id="LOCAL-00004" summary="创建简单用户文件并实现读写">
+      <option name="closed" value="true" />
+      <created>1752566585230</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752566585230</updated>
+    </task>
+    <task id="LOCAL-00005" summary="创建用户数据页面">
+      <option name="closed" value="true" />
+      <created>1752580724086</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752580724086</updated>
+    </task>
+    <task id="LOCAL-00006" summary="创建新手指导页面，优化游戏页面管理。">
+      <option name="closed" value="true" />
+      <created>1752653208868</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752653208868</updated>
+    </task>
+    <task id="LOCAL-00007" summary="将新手指导数据合并入地图数据，完善地图1、2、3。">
+      <option name="closed" value="true" />
+      <created>1752738225548</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752738225548</updated>
+    </task>
+    <task id="LOCAL-00008" summary="添加层叠元素，完善地图4，优化运行速度。">
+      <option name="closed" value="true" />
+      <created>1753085067601</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1753085067602</updated>
+    </task>
+    <task id="LOCAL-00009" summary="添加箭头元素和相关判定，添加地图5（关于箭头的新手指导），优化车标移动逻辑。">
+      <option name="closed" value="true" />
+      <created>1753260865487</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1753260865487</updated>
+    </task>
+    <task id="LOCAL-00010" summary="添加注销页面，优化用户数据读取错误处理，添加地图进度保存和显示。">
+      <option name="closed" value="true" />
+      <created>1753345022789</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1753345022789</updated>
+    </task>
+    <task id="LOCAL-00011" summary="添加注销页面，优化用户数据读取错误处理，添加地图进度保存和显示。">
+      <option name="closed" value="true" />
+      <created>1753345385103</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1753345385103</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="7b496065-ec93-4b25-996d-acdb5ddf4127" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="7b496065-ec93-4b25-996d-acdb5ddf4127">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial push" />
+    <MESSAGE value="添加过关界面；禁止180度调头" />
+    <MESSAGE value="UI4滚轮判断、反应取消鼠标滚轮，用鼠标点击代替。" />
+    <MESSAGE value="创建简单用户文件并实现读写" />
+    <MESSAGE value="创建用户数据页面" />
+    <MESSAGE value="创建新手指导页面，优化游戏页面管理" />
+    <MESSAGE value="创建新手指导页面，优化游戏页面管理。" />
+    <MESSAGE value="将新手指导数据合并入地图数据，完善地图1、2、3。" />
+    <MESSAGE value="添加层叠元素，完善地图4，优化运行速度。" />
+    <MESSAGE value="添加箭头元素和相关判定，添加地图5（关于箭头的新手指导），优化车标移动逻辑。" />
+    <MESSAGE value="添加注销页面，优化用户数据读取错误处理，添加地图进度保存和显示。" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加注销页面，优化用户数据读取错误处理，添加地图进度保存和显示。" />
+  </component>
+</project>
