@@ -34,6 +34,9 @@ class Navigator:
             self.game.st=9
             self.end=None
             self.game.beginning=True
+            if self.game.ui4.i+1 not in self.game.data['data']['map']:
+                self.game.data['data']['map'].append(self.game.ui4.i+1)
+                self.game.ui4.update_color()
             return
             
         self.mm.display()

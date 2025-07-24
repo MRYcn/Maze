@@ -17,26 +17,6 @@ class Map_Manager:
         self.RW=self.game.REF_WIDTH
         self.RH=self.game.REF_HEIGHT
 
-        map5_dict={
-            'start':[600,255],
-            'end':[800,355],
-            'impasse':[[600,255,0]],
-            'straight':[[800,155,90],[900,255,0],[800,355,90]],
-            'turn':[[700,155,90],[900,155,0],[700,355,180],[900,355,270]],
-            'three':[[700,255,270]],
-            'arrow':[[700,255,0,'red_turn',True]]
-        }
-        map5_gid=[
-            ['箭头表示仅允许前',[1080,155]],
-            ['进的方向，此要求',[1080,205]],
-            ['仅对沿箭尾方向进',[1080,255]],
-            ['入的情况有效。',[1065,305]]
-        ]
-        map5_dict['guidance']=map5_gid
-        with open('map5.json','w') as f:
-            json.dump(map5_dict,f)
-            print('written')
-
         map_files=['map1.json','map2.json','map3.json','map4.json','map5.json']
         self.map_dicts=[]
         for file in map_files:

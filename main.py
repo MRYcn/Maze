@@ -18,6 +18,7 @@ from ui6 import UI6
 from ui7 import UI7
 from ui9 import UI9
 from ui10 import UI10
+from ui11 import UI11
 from data import Data_Manager
 
 class Game:
@@ -134,6 +135,10 @@ class Game:
             self.ui10.display()
             if self.press_pos:
                 self.ui10.update(self.press_pos)
+        elif self.st==11:#suspend page
+            self.ui11.display()
+            if self.press_pos:
+                self.ui11.update(self.press_pos)
 
         self.press_pos=False
 
@@ -181,6 +186,7 @@ class Game:
         self.ui7 = UI7(self)
         self.ui9 = UI9(self)
         self.ui10 = UI10(self)
+        self.ui11=UI11(self)
 
 if __name__=='__main__':
     app=Game()

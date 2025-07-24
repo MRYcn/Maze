@@ -7,6 +7,7 @@ class UI4:
         self.game=game
         self.mm=game.navigator.mm
 
+        self.map=self.game.data['data']['map'][::]
         self.suf_rects=[]
         self.back_rect=None
         self.slider_rect=None
@@ -17,8 +18,7 @@ class UI4:
         self.sufs=[pygame.Surface((200,400)) for _ in range(self.level_num)]
         self.sufs_init_locs=[(342+i*300,320) for i in range(self.level_num)]
         self.sufs_locs=self.sufs_init_locs[::]
-        for suf in self.sufs:
-            suf.fill((252,232,55))
+        self.update_color()
 
         texts=['关卡'+str(i+1) for i in range(self.level_num)]
         self.level_texts=[font1.render(text,True,(0,0,0),None) for text in texts]
@@ -48,9 +48,10 @@ class UI4:
         if self.back_rect.collidepoint(press_pos):
             self.game.st=1
         for i,rect in enumerate(self.suf_rects):
-            if rect.collidepoint(press_pos):
+            if rect.collidepoint(press_pos) and (i==0 or i in self.game.data['data']['map']):
                 self.game.st=(7,i+1)
                 self.mm.load_map(i)
+                self.i=i
                 break
         if self.slider_rect.collidepoint(press_pos):
             if self.game.w / self.game.h >= 2.19:
@@ -67,3 +68,15 @@ class UI4:
                 self.slider_loc=(press_pos[0],575)
             da=(self.slider_loc[0]-self.slider_init_loc[0])/(self.slider_max_loc[0]-self.slider_init_loc[0])*(300*self.level_num-900)
             self.sufs_locs=[(342+i*300-da,320) for i in range(self.level_num)]
+        if self.map!=self.game.data['data']['map']:
+            self.update_color()
+            self.map = self.game.data['data']['map'][::]
+
+    def update_color(self):
+        for i,suf in enumerate(self.sufs):
+            if i+1 in self.game.data['data']['map']:
+                suf.fill((252,232,55))
+            elif i==max(self.game.data['data']['map']):
+                suf.fill((242,144,53))
+            else:
+                suf.fill((168,152,37))

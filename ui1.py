@@ -33,6 +33,7 @@ class UI1:
         if self.back_rect.collidepoint(press_pos):
             self.game.st=0
         elif self.suf1_rect.collidepoint(press_pos):
+            self.game.ui4.update_color()
             self.game.st=4
         elif self.suf2_rect.collidepoint(press_pos):
             self.game.st=6
