@@ -32,12 +32,15 @@ class UI4:
         self.slider_loc=self.slider_init_loc
         self.slider=pygame.Surface((self.slider_width,25))
         self.slider.fill((107,106,106))
+        font2=pygame.font.Font('res/font/DroidSansChinese.ttf',25)
+        self.slider_text=font2.render('点击（非长按）以移动滚动条',True,(0,0,0),None)
 
 
     def display(self):
         self.back_rect=self.game.blit_to_sc(self.back,(125,80),0)
         self.slider_rect=self.game.blit_to_sc(self.slider_back,(642,575),0)
         self.game.blit_to_sc(self.slider,self.slider_loc,0)
+        self.game.blit_to_sc(self.slider_text,(642,615),0)
 
         self.suf_rects=[]
         for i,suf in enumerate(self.sufs):

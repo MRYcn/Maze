@@ -17,7 +17,7 @@ class Map_Manager:
         self.RW=self.game.REF_WIDTH
         self.RH=self.game.REF_HEIGHT
 
-        map_files=['map1.json','map2.json','map3.json','map4.json','map5.json']
+        map_files=['map1.json','map2.json','map3.json','map4.json','map5.json','map6.json','map7.json','map8.json']
         self.map_dicts=[]
         for file in map_files:
             with open(file,'r') as f:
@@ -53,7 +53,7 @@ class Map_Manager:
             el.display()
 
     def get_level_num(self):
-        return 5
+        return len(self.map_dicts)
 
     def judge_action(self):
         ang=self.round_ang()

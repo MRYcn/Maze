@@ -157,13 +157,26 @@ class Game:
         w=int(w*selfw/self.REF_WIDTH)
         h=int(h*selfh/self.REF_HEIGHT)
         img=pt.scale(img,(w,h))
-        img=pt.rotate(img,ang)
         img=pt.flip(img,False,yflip)
+        img=pt.rotate(img,ang)
         rect=img.get_rect()
         cx=loc[0]*selfw/self.REF_WIDTH
         cy=loc[1]*selfh/self.REF_HEIGHT
         rect.center=(int(cx),int(cy))
         return self.screen.blit(img,rect)
+
+    def draw_line(self,color,start,end,length):
+        if self.w / self.h >= 2.19:
+            start = (start[0] * self.h/self.REF_HEIGHT,
+                         start[1] * self.h/self.REF_HEIGHT)
+            end = (end[0] * self.h/self.REF_HEIGHT,
+                         end[1] * self.h/self.REF_HEIGHT)
+        else:
+            start = (start[0] * self.w/ self.REF_WIDTH,
+                         start[1] * self.w/ self.REF_WIDTH)
+            end = (end[0] * self.w/ self.REF_WIDTH,
+                         end[1] * self.w/ self.REF_WIDTH)
+        pygame.draw.line(self.screen,color,start,end,2)
 
     def on_game_start(self):
         self.data=self.dm.load_data()

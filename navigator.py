@@ -8,6 +8,7 @@ from maps import Map_Manager
 class Navigator:
     def __init__(self,game):
         self.img=pygame.image.load('res/pic/navigator.png')
+        self.img.set_alpha(200)
         self.game=game
         self.RW=game.REF_WIDTH
         self.RH=game.REF_HEIGHT
@@ -18,6 +19,7 @@ class Navigator:
         
         self.mm=Map_Manager(self)
         self.end=None
+        self.start=None
     
     def update(self):#st:game.st
         self.mm.update()
@@ -29,7 +31,6 @@ class Navigator:
                 for suf in self.mm.map_sufs:
                     if suf.__class__.__name__=='End':
                         self.end=suf
-                        break
         if self.end.loc==(600,255):
             self.game.st=9
             self.end=None
@@ -40,7 +41,8 @@ class Navigator:
             return
             
         self.mm.display()
-        
+        if self.end:
+            self.game.draw_line((255,0,0),self.loc,self.end.loc,2)
         self.game.blit_to_sc(self.img,self.loc,-90+self.ang)
             
     def update0(self):
