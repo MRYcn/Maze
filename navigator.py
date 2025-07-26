@@ -31,7 +31,7 @@ class Navigator:
                 for suf in self.mm.map_sufs:
                     if suf.__class__.__name__=='End':
                         self.end=suf
-        if self.end.loc==(600,255):
+        if self.end and self.end.loc==(600,255):
             self.game.st=9
             self.end=None
             self.game.beginning=True
