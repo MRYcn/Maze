@@ -8,12 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="修正为绘图时先翻转后旋转及相关地图数据，添加地图6、7、8，添加滚动条使用提示，将车标设置透明防止遮挡地图元素。">
+    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="更新.gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps.py" beforeDir="false" afterPath="$PROJECT_DIR$/maps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/navigator.py" beforeDir="false" afterPath="$PROJECT_DIR$/navigator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui1.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui4.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui4.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +220,23 @@
       <option name="project" value="LOCAL" />
       <updated>1753432087535</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="添加地图9、10,修复车标到终点时随机崩溃的BUG，添加官网访问按钮。">
+      <option name="closed" value="true" />
+      <created>1753519968869</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1753519968869</updated>
+    </task>
+    <task id="LOCAL-00014" summary="更新.gitignore">
+      <option name="closed" value="true" />
+      <created>1753520069964</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1753520069964</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,6 +310,8 @@
     <MESSAGE value="添加箭头元素和相关判定，添加地图5（关于箭头的新手指导），优化车标移动逻辑。" />
     <MESSAGE value="添加注销页面，优化用户数据读取错误处理，添加地图进度保存和显示。" />
     <MESSAGE value="修正为绘图时先翻转后旋转及相关地图数据，添加地图6、7、8，添加滚动条使用提示，将车标设置透明防止遮挡地图元素。" />
-    <option name="LAST_COMMIT_MESSAGE" value="修正为绘图时先翻转后旋转及相关地图数据，添加地图6、7、8，添加滚动条使用提示，将车标设置透明防止遮挡地图元素。" />
+    <MESSAGE value="添加地图9、10,修复车标到终点时随机崩溃的BUG，添加官网访问按钮。" />
+    <MESSAGE value="更新.gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新.gitignore" />
   </component>
 </project>
