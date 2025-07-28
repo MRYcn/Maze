@@ -12,7 +12,7 @@ class UI3:
             '版本：1.0.0',
             '程序设计：Byte豚/MRYcn，美术设计：Lotus_Yi',
             '联系方式：yrk202105152030@outlook.com',
-            'License: MIT License',
+            '许可证：MIT License',
             '获取更新：联系开发者/访问官网'
             ]
         self.about_texts=[font.render(text,True,(0,0,0),None) for text in texts]
@@ -35,4 +35,4 @@ class UI3:
         if self.back_rect.collidepoint(press_pos):
             self.game.st=0
         elif self.update_rect.collidepoint(press_pos):
-            webbrowser.open('https://mrycn.github.io/Maze')
+            webbrowser.open('https://pool-tempo-511.notion.site/23ccaa07117f8043a840ca91d1b21a95?pvs=4')

@@ -8,19 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="更新.gitignore，更新关卡界面图形，更新进度显示为勾。">
+    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="修改背景等美术设计，增添贡献者，滚动条透明。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps.py" beforeDir="false" afterPath="$PROJECT_DIR$/maps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui0.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui1.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui10.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui10.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui11.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui4.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui5.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui5.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753530169286</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="修改背景等美术设计，增添贡献者，滚动条透明。">
+      <option name="closed" value="true" />
+      <created>1753692922291</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1753692922291</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -329,6 +328,7 @@
     <MESSAGE value="添加地图9、10,修复车标到终点时随机崩溃的BUG，添加官网访问按钮。" />
     <MESSAGE value="更新.gitignore" />
     <MESSAGE value="更新.gitignore，更新关卡界面图形，更新进度显示为勾。" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新.gitignore，更新关卡界面图形，更新进度显示为勾。" />
+    <MESSAGE value="修改背景等美术设计，增添贡献者，滚动条透明。" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改背景等美术设计，增添贡献者，滚动条透明。" />
   </component>
 </project>
