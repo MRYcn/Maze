@@ -20,6 +20,7 @@ class UI3:
 
         self.update_suf=pygame.Surface((250,70))
         self.update_suf.fill((255,255,255))
+        self.update_suf.set_alpha((150))
         self.update_text=font.render('访问官网',True,(0,0,0),None)
     
     def display(self):

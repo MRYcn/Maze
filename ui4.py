@@ -18,6 +18,7 @@ class UI4:
         self.sufs=[pygame.Surface((200,400)) for _ in range(self.level_num)]
         for i in range(self.level_num):
             self.sufs[i]=pygame.image.load(f'res/pic/level{i+1}.png')
+            self.sufs[i].set_alpha((150))
         self.sufs_init_locs=[(342+i*300,320) for i in range(self.level_num)]
         self.sufs_locs=self.sufs_init_locs[::]
 
@@ -29,7 +30,7 @@ class UI4:
 
         self.slider_back=pygame.Surface((1000,25))
         self.slider_back.fill((221,221,219))
-        self.slider_back.set_alpha(200)
+        self.slider_back.set_alpha(150)
         self.slider_width = 2000 / (5 - 1)
         self.slider_init_loc=(142+self.slider_width/2,575)
         self.slider_max_loc=(1142-self.slider_width/2,575)

@@ -16,6 +16,7 @@ class UI11:
         self.confirm_rect=None
         self.confirm_suf=pygame.Surface((200,70))
         self.confirm_suf.fill((255,255,255))
+        self.confirm_suf.set_alpha((150))
         self.confirm_text=font2.render('确认',True,(0,0,0),None)
 
 

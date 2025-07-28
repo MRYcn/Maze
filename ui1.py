@@ -8,10 +8,13 @@ class UI1:
         self.suf1_rect=self.suf2_rect=self.suf3_rect=self.back_rect=None
         font1=pygame.font.Font('res/font/DroidSansChinese.ttf',50)
         self.suf1=pygame.image.load('res/pic/mode_suf1.png')
+        self.suf1.set_alpha((150))
         self.suf1_text=font1.render('关卡',True,(0,0,0),None)
         self.suf2=pygame.image.load('res/pic/mode_suf2.png')
+        self.suf2.set_alpha((150))
         self.suf2_text=font1.render('排位',True,(0,0,0),None)
         self.suf3=pygame.image.load('res/pic/mode_suf3.png')
+        self.suf3.set_alpha((150))
         self.suf3_text=font1.render('设置',True,(0,0,0),None)
         
         font2=pygame.font.Font('res/font/DroidSansChinese.ttf',45)

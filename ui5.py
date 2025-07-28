@@ -8,6 +8,7 @@ class UI5:
         self.suf1_rect=self.back_rect=None
         font1=pygame.font.Font('res/font/DroidSansChinese.ttf',50)
         self.suf1=pygame.image.load('res/pic/user.png')
+        self.suf1.set_alpha((150))
         self.suf1_text=font1.render('用户',True,(0,0,0),None)
 
         font2=pygame.font.Font('res/font/DroidSansChinese.ttf',45)
