@@ -17,7 +17,63 @@ class Map_Manager:
         self.RW=self.game.REF_WIDTH
         self.RH=self.game.REF_HEIGHT
 
-        map_files=['map1.json','map2.json','map3.json','map4.json','map5.json','map6.json','map7.json','map8.json','map9.json','map10.json']
+        map11_dict={
+            'start':[600,255],
+            'end':[1300,155],
+            'impasse':[
+                [600,255,0],
+                [1300,155,180]
+            ],
+            'turn':[
+                [700,155,90],
+                [800,155,0],
+                [900,155,90],
+                [1000,155,0],
+                [1100,155,90],
+                [600,355,90],
+                [1200,355,270],
+                [600,455,180],
+                [1200,455,0],
+                [700,555,180],
+                [1200,555,270],
+                [800,655,180],
+                [900,655,270],
+                [1000,655,180],
+                [1100,655,270]
+            ],
+            'three':[
+                [1200,155,0],
+                [1200,255,270],
+            ],
+            'floor':[
+                [700,255,90],
+                [800, 255, 90],
+                [900, 255, 90],
+                [1000, 255, 90],
+                [1100, 255, 90],
+                [700, 355, 90],
+                [800, 355, 90],
+                [900, 355, 90],
+                [1000, 355, 90],
+                [1100, 355, 90],
+                [700, 455, 90],
+                [800, 455, 90],
+                [900, 455, 90],
+                [1000, 455, 90],
+                [1100, 455, 90],
+                [800, 555, 90],
+                [900, 555, 90],
+                [1000, 555, 90],
+                [1100, 555, 90]
+            ],
+            'arrow':[
+                [1200,155,90,'red_turn',True]
+            ]
+        }
+        with open('map11.json','w') as f:
+            json.dump(map11_dict,f)
+
+        map_files=['map1.json','map2.json','map3.json','map4.json','map5.json','map6.json','map7.json','map8.json','map9.json','map10.json','map11.json']
         self.map_dicts=[]
         for file in map_files:
             with open(file,'r') as f:

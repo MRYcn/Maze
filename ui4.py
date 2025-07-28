@@ -16,7 +16,8 @@ class UI4:
 
         self.level_num=self.mm.get_level_num()
         self.sufs=[pygame.Surface((200,400)) for _ in range(self.level_num)]
-        self.sufs[0]=pygame.image.load('res/pic/level1.png')
+        for i in range(self.level_num):
+            self.sufs[i]=pygame.image.load(f'res/pic/level{i+1}.png')
         self.sufs_init_locs=[(342+i*300,320) for i in range(self.level_num)]
         self.sufs_locs=self.sufs_init_locs[::]
 
@@ -28,7 +29,7 @@ class UI4:
 
         self.slider_back=pygame.Surface((1000,25))
         self.slider_back.fill((221,221,219))
-        #self.slider_width=2000/(level_num-1)
+        self.slider_back.set_alpha(200)
         self.slider_width = 2000 / (5 - 1)
         self.slider_init_loc=(142+self.slider_width/2,575)
         self.slider_max_loc=(1142-self.slider_width/2,575)
@@ -48,7 +49,7 @@ class UI4:
         self.suf_rects=[]
         for i,suf in enumerate(self.sufs):
             self.suf_rects.append(self.game.blit_to_sc(suf,self.sufs_locs[i],0))
-            self.game.blit_to_sc(self.level_texts[i],(self.sufs_locs[i][0]-35,480),0)
+            self.game.blit_to_sc(self.level_texts[i],(self.sufs_locs[i][0]-30,480),0)
         for loc in self.finished_locs:
             self.game.blit_to_sc(self.finished_icon,loc,0)
     

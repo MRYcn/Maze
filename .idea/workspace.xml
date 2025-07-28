@@ -8,11 +8,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="更新.gitignore">
+    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="更新.gitignore，更新关卡界面图形，更新进度显示为勾。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigator.py" beforeDir="false" afterPath="$PROJECT_DIR$/navigator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.keep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps.py" beforeDir="false" afterPath="$PROJECT_DIR$/maps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui0.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui0.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui1.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui10.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui11.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui4.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui5.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui5.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753520069964</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="更新.gitignore，更新关卡界面图形，更新进度显示为勾。">
+      <option name="closed" value="true" />
+      <created>1753530169285</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1753530169286</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -312,6 +328,7 @@
     <MESSAGE value="修正为绘图时先翻转后旋转及相关地图数据，添加地图6、7、8，添加滚动条使用提示，将车标设置透明防止遮挡地图元素。" />
     <MESSAGE value="添加地图9、10,修复车标到终点时随机崩溃的BUG，添加官网访问按钮。" />
     <MESSAGE value="更新.gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新.gitignore" />
+    <MESSAGE value="更新.gitignore，更新关卡界面图形，更新进度显示为勾。" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新.gitignore，更新关卡界面图形，更新进度显示为勾。" />
   </component>
 </project>

@@ -31,6 +31,7 @@ class Game:
         height=int(screeninfo.current_h*3/4)
         self.screen=pygame.display.set_mode((width,height),pygame.RESIZABLE)
         pygame.display.set_caption('迷宫大作战')
+        self.bg=pygame.image.load('res/pic/bg.png')
         
         self.clock=pygame.time.Clock()
         self.mouse_leftdown=False
@@ -91,7 +92,7 @@ class Game:
                     self.press_pos=self.mouse_pos
     
     def run_game(self):  ##testing
-        self.screen.fill((99,205,255))
+        self.blit_bg()
         if self.st==0:#launch page
             self.ui0.display()
             if self.press_pos:
@@ -177,6 +178,11 @@ class Game:
             end = (end[0] * self.w/ self.REF_WIDTH,
                          end[1] * self.w/ self.REF_WIDTH)
         pygame.draw.line(self.screen,color,start,end,2)
+
+    def blit_bg(self):
+        self.screen.fill((0,0,0))
+        img=pt.scale(self.bg,(self.w,self.h))
+        self.screen.blit(img,(0,0))
 
     def on_game_start(self):
         self.data=self.dm.load_data()

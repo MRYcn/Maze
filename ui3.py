@@ -10,7 +10,7 @@ class UI3:
         font=pygame.font.Font('res/font/DroidSansChinese.ttf',45)
         texts=['软件名：迷宫大挑战',
             '版本：1.0.0',
-            '开发者：Byte豚/MRY/MRYcn',
+            '程序设计：Byte豚/MRYcn，美术设计：Lotus_Yi',
             '联系方式：yrk202105152030@outlook.com',
             'License: MIT License',
             '获取更新：联系开发者/访问官网'
@@ -19,7 +19,7 @@ class UI3:
         self.back_text=font.render('«返回',True,(0,0,0),None)
 
         self.update_suf=pygame.Surface((250,70))
-        self.update_suf.fill((252,232,55))
+        self.update_suf.fill((255,255,255))
         self.update_text=font.render('访问官网',True,(0,0,0),None)
     
     def display(self):

@@ -8,12 +8,10 @@ class UI10:
         self.back_rect=None
         self.suf2_rect=None
         font1=pygame.font.Font('res/font/DroidSansChinese.ttf',35)
-        self.suf1=pygame.Surface((200,400))
-        self.suf1.fill((252,232,55))
+        self.suf1=pygame.image.load('res/pic/username.png')
         self.suf1_text=font1.render('用户名：',True,(0,0,0),None)
         self.username=font1.render(self.game.data['user']['name'],True,(0,0,0),None)
-        self.suf2=pygame.Surface((200,400))
-        self.suf2.fill((252,232,55))
+        self.suf2=pygame.image.load('res/pic/suspend.png')
         self.suf2_text=font1.render('注销',True,(0,0,0),None)
 
         font2 = pygame.font.Font('res/font/DroidSansChinese.ttf', 45)
