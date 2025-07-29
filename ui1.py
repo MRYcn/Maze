@@ -6,7 +6,7 @@ class UI1:
     def __init__(self,game):
         self.game=game
         self.suf1_rect=self.suf2_rect=self.suf3_rect=self.back_rect=None
-        font1=pygame.font.Font('res/font/DroidSansChinese.ttf',50)
+        font1=pygame.font.Font('res/font/DFPGB_Y5.ttf',50)
         self.suf1=pygame.image.load('res/pic/mode_suf1.png')
         self.suf1.set_alpha((150))
         self.suf1_text=font1.render('关卡',True,(0,0,0),None)
@@ -17,8 +17,8 @@ class UI1:
         self.suf3.set_alpha((150))
         self.suf3_text=font1.render('设置',True,(0,0,0),None)
         
-        font2=pygame.font.Font('res/font/DroidSansChinese.ttf',45)
-        self.back=font2.render('«返回',True,(0,0,0),None)
+        font2=pygame.font.Font('res/font/DFPGB_Y5.ttf',45)
+        self.back=font2.render('<<返回',True,(0,0,0),None)
     
     def display(self):
         self.suf1_rect=self.game.blit_to_sc(self.suf1,(342,320),0)

@@ -6,7 +6,7 @@ class UI0:
     def __init__(self,game):
         self.game=game
         self.suf1_rect=self.suf2_rect=self.suf3_rect=self.title_rect=None
-        font1=pygame.font.Font('res/font/DroidSansChinese.ttf',45)
+        font1=pygame.font.Font('res/font/DFPGB_Y5.ttf',45)
         self.suf1=pygame.Surface((250,70))
         self.suf1.fill((255,255,255))
         self.suf1.set_alpha((150))

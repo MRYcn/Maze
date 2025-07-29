@@ -11,8 +11,8 @@ class UI4:
         self.suf_rects=[]
         self.back_rect=None
         self.slider_rect=None
-        font1=pygame.font.Font('res/font/DroidSansChinese.ttf',45)
-        self.back=font1.render('«返回',True,(0,0,0),None)
+        font1=pygame.font.Font('res/font/DFPGB_Y5.ttf',45)
+        self.back=font1.render('<<返回',True,(0,0,0),None)
 
         self.level_num=self.mm.get_level_num()
         self.sufs=[pygame.Surface((200,400)) for _ in range(self.level_num)]
@@ -37,7 +37,7 @@ class UI4:
         self.slider_loc=self.slider_init_loc
         self.slider=pygame.Surface((self.slider_width,25))
         self.slider.fill((107,106,106))
-        font2=pygame.font.Font('res/font/DroidSansChinese.ttf',25)
+        font2=pygame.font.Font('res/font/DFPGB_Y5.ttf',25)
         self.slider_text=font2.render('点击（非长按）以移动滚动条',True,(0,0,0),None)
 
 

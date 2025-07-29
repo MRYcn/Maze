@@ -9,10 +9,11 @@ class UI7:
         self.navigator=game.navigator
         self.screen=game.screen
         self.back_rect=None
-        self.font = pygame.font.Font('res/font/DroidSansChinese.ttf', 30)
-        self.back_text = self.font.render('«返回', True, (0, 0, 0), None)
+        self.font = pygame.font.Font('res/font/DFPGB_Y5.ttf', 30)
+        self.back_text = self.font.render('<<返回', True, (0, 0, 0), None)
         self.back_suf = pygame.Surface((100, 35))
-        self.back_suf.fill((252, 232, 55))
+        self.back_suf.fill((135,206,250))
+        self.back_suf.set_alpha(150)
         self.guidance_dict={}
         for i,map_dict in enumerate(self.navigator.mm.map_dicts):
             if 'guidance' in map_dict.keys():

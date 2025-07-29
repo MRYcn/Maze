@@ -8,20 +8,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="更新官网">
+    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="更新官网，全局透明化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/impasse.py" beforeDir="false" afterPath="$PROJECT_DIR$/impasse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/mode_suf3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/mode_suf3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/straight.py" beforeDir="false" afterPath="$PROJECT_DIR$/straight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps.py" beforeDir="false" afterPath="$PROJECT_DIR$/maps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui0.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui0.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui1.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui10.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui10.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui11.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui2.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui4.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui5.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui6.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui6.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui7.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui9.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui9.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753694199019</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="更新官网，全局透明化">
+      <option name="closed" value="true" />
+      <created>1753704992122</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1753704992122</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -348,6 +356,7 @@
     <MESSAGE value="更新.gitignore，更新关卡界面图形，更新进度显示为勾。" />
     <MESSAGE value="修改背景等美术设计，增添贡献者，滚动条透明。" />
     <MESSAGE value="更新官网" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新官网" />
+    <MESSAGE value="更新官网，全局透明化" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新官网，全局透明化" />
   </component>
 </project>

@@ -6,12 +6,12 @@ class UI11:
     def __init__(self,game):
         self.game=game
 
-        font1 = pygame.font.Font('res/font/DroidSansChinese.ttf', 95)
-        font2 = pygame.font.Font('res/font/DroidSansChinese.ttf', 45)
+        font1 = pygame.font.Font('res/font/DFPGB_Y5.ttf', 95)
+        font2 = pygame.font.Font('res/font/DFPGB_Y5.ttf', 45)
         self.title=font1.render(' 删除所有数据？',True,(0,0,0),None)
 
         self.back_rect=None
-        self.back_text=font2.render('«返回',True,(0,0,0),None)
+        self.back_text=font2.render('<<返回',True,(0,0,0),None)
 
         self.confirm_rect=None
         self.confirm_suf=pygame.Surface((200,70))
