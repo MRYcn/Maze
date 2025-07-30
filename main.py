@@ -61,7 +61,7 @@ class Game:
             if self.gaming:
                 self.run_game()
                 pygame.display.flip()
-                self.clock.tick(30)
+                self.clock.tick(60)
                 global fps, d1, num
                 num+=1
                 d2=datetime.now()

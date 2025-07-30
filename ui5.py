@@ -16,7 +16,7 @@ class UI5:
 
     def display(self):
         self.suf1_rect=self.game.blit_to_sc(self.suf1,(342,320),0)
-        self.game.blit_to_sc(self.suf1_text,(300,480),0)
+        self.game.blit_to_sc(self.suf1_text,(342,480),0)
         self.back_rect=self.game.blit_to_sc(self.back,(125,80),0)
 
     def update(self,press_pos):

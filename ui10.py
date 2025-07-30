@@ -21,8 +21,8 @@ class UI10:
 
     def display(self):
         self.game.blit_to_sc(self.suf1,(342,320),0)
-        self.game.blit_to_sc(self.suf1_text,(335,160),0)
-        self.game.blit_to_sc(self.username,(300,480),0)
+        self.game.blit_to_sc(self.suf1_text,(342,160),0)
+        self.game.blit_to_sc(self.username,(342,480),0)
         self.suf2_rect=self.game.blit_to_sc(self.suf2,(600,320),0)
         self.game.blit_to_sc(self.suf2_text,(600,480),0)
         self.back_rect=self.game.blit_to_sc(self.back,(125,80),0)
