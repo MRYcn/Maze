@@ -31,6 +31,7 @@ class Game:
         height=int(screeninfo.current_h*3/4)
         self.screen=pygame.display.set_mode((width,height),pygame.RESIZABLE)
         pygame.display.set_caption('迷宫大挑战')
+        pygame.display.set_icon(pygame.image.load('res/pic/icon.png'))
         self.bg=pygame.image.load('res/pic/bg.png')
         
         self.clock=pygame.time.Clock()

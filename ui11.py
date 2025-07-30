@@ -1,4 +1,5 @@
 import pygame
+import pygame.transform as pt
 
 #suspend page
 
@@ -14,8 +15,7 @@ class UI11:
         self.back_text=font2.render('<<返回',True,(0,0,0),None)
 
         self.confirm_rect=None
-        self.confirm_suf=pygame.Surface((200,70))
-        self.confirm_suf.fill((255,255,255))
+        self.confirm_suf=pt.scale(pygame.image.load('res/pic/ui0_suf.png'),(200,70))
         self.confirm_suf.set_alpha((150))
         self.confirm_text=font2.render('确认',True,(0,0,0),None)
 

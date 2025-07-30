@@ -1,4 +1,5 @@
 import pygame
+import pygame.transform as pt
 
 #checkout page
 
@@ -11,8 +12,7 @@ class UI9:
         self.result=font1.render(' 过关！',True,(0,0,0),None)
 
         self.back_rect=None
-        self.back_suf=pygame.Surface((200,70))
-        self.back_suf.fill((255,255,255))
+        self.back_suf=pt.scale(pygame.image.load('res/pic/ui0_suf.png'),(200,70))
         self.back_suf.set_alpha(150)
         self.back_font=font2.render('返回',True,(0,0,0),None)
 
