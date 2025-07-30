@@ -18,7 +18,7 @@ class UI4:
         self.sufs=[pygame.Surface((200,400)) for _ in range(self.level_num)]
         for i in range(self.level_num):
             self.sufs[i]=pygame.image.load(f'res/pic/level{i+1}.png')
-            self.sufs[i].set_alpha((150))
+            #self.sufs[i].set_alpha((150))
         self.sufs_init_locs=[(342+i*300,320) for i in range(self.level_num)]
         self.sufs_locs=self.sufs_init_locs[::]
 

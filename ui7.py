@@ -11,24 +11,25 @@ class UI7:
         self.back_rect=None
         self.font = pygame.font.Font('res/font/DFPGB_Y5.ttf', 30)
         self.back_text = self.font.render('<<返回', True, (0, 0, 0), None)
-        self.back_suf = pygame.Surface((100, 35))
-        self.back_suf.fill((135,206,250))
-        self.back_suf.set_alpha(150)
+        #self.back_suf = pt.scale(pygame.image.load('res/pic/ui0_suf.png'),(110,35))
+        #self.back_suf.set_alpha(100)
         self.guidance_dict={}
         for i,map_dict in enumerate(self.navigator.mm.map_dicts):
             if 'guidance' in map_dict.keys():
                 self.guidance_dict[i+1]=map_dict['guidance']
         self.current_guidance_suf_locs={}
+        self.bg=pygame.image.load('res/pic/game_bg.png')
 
     def display(self):
-        self.screen.fill((255,255,255))
+        self.screen.fill((0,0,0))
+        self.game.blit_bg(self.bg)
         if self.game.st[1] not in self.current_guidance_suf_locs.keys():
             self.load_gid_sufs(self.game.st[1])
         for suf,loc in self.current_guidance_suf_locs[self.game.st[1]]:
             self.game.blit_to_sc(suf,loc,0)
         self.navigator.update()
-        self.back_rect=self.game.blit_to_sc(self.back_suf,(60,20),0)
-        self.game.blit_to_sc(self.back_text,(60,20),0)
+        #self.back_rect=self.game.blit_to_sc(self.back_suf,(60,20),0)
+        self.back_rect=self.game.blit_to_sc(self.back_text,(60,20),0)
 
     def update(self,press_pos=False,mouse_wheel=False):
         if self.back_rect.collidepoint(press_pos):

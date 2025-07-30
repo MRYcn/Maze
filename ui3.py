@@ -18,8 +18,7 @@ class UI3:
         self.about_texts=[font.render(text,True,(0,0,0),None) for text in texts]
         self.back_text=font.render('<<返回',True,(0,0,0),None)
 
-        self.update_suf=pygame.Surface((250,70))
-        self.update_suf.fill((255,255,255))
+        self.update_suf=pygame.image.load('res/pic/ui0_suf.png')
         self.update_suf.set_alpha((150))
         self.update_text=font.render('访问官网',True,(0,0,0),None)
     
