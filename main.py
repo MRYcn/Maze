@@ -167,7 +167,7 @@ class Game:
         rect.center=(int(cx),int(cy))
         return self.screen.blit(img,rect)
 
-    def draw_line(self,color,start,end,length):
+    def draw_line(self,color,start,end):
         if self.w / self.h >= 2.19:
             start = (start[0] * self.h/self.REF_HEIGHT,
                          start[1] * self.h/self.REF_HEIGHT)

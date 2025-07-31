@@ -8,38 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="设置图标，全局按钮圆角">
+    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="全局图片圆角，修正文字位置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level11.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level12.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level13.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level14.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level15.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level16.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level17.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level18.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level19.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level19.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level4.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level5.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level6.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level7.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level8.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/level9.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/level9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/mode_suf1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/mode_suf1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/mode_suf2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/mode_suf2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/mode_suf3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/mode_suf3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/suspend.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/suspend.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/user.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/username.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/username.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui1.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui10.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui10.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui4.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui5.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps.py" beforeDir="false" afterPath="$PROJECT_DIR$/maps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigator.py" beforeDir="false" afterPath="$PROJECT_DIR$/navigator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -327,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753852982920</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="全局图片圆角，修正文字位置">
+      <option name="closed" value="true" />
+      <created>1753861773980</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1753861773980</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -400,6 +381,7 @@
     <MESSAGE value="修改全局字体，完善透明界面" />
     <MESSAGE value="全局透明化，修改窗口标题，修改游戏背景显示，按钮圆角" />
     <MESSAGE value="设置图标，全局按钮圆角" />
-    <option name="LAST_COMMIT_MESSAGE" value="设置图标，全局按钮圆角" />
+    <MESSAGE value="全局图片圆角，修正文字位置" />
+    <option name="LAST_COMMIT_MESSAGE" value="全局图片圆角，修正文字位置" />
   </component>
 </project>

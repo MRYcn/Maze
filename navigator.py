@@ -42,7 +42,7 @@ class Navigator:
             
         self.mm.display()
         if self.end:
-            self.game.draw_line((255,0,0),self.loc,self.end.loc,2)
+            self.game.draw_line((255, 0, 0), self.loc, self.end.loc)
         self.game.blit_to_sc(self.img,self.loc,-90+self.ang)
             
     def update0(self):
