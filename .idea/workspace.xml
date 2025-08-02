@@ -8,10 +8,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="优化函数，添加地图13。">
-      <change afterPath="$PROJECT_DIR$/map14.json" afterDir="false" />
+    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="优化代码格式，添加地图14、15。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps.py" beforeDir="false" afterPath="$PROJECT_DIR$/maps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pic/end.png.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pic/floor.png.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pic/four.png.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pic/impasse.png.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pic/navigator.png.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pic/start.png.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pic/straight.png.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pic/three.png.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pic/turn.png.bak" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +74,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;Python.data.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.map_generator.executor&quot;: &quot;Run&quot;,
     &quot;Python.maps.executor&quot;: &quot;Debug&quot;,
     &quot;Python.ui10.executor&quot;: &quot;Run&quot;,
     &quot;Python.ui6.executor&quot;: &quot;Run&quot;,
@@ -74,20 +82,21 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/mry/下载/Maze&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mry/下载/Maze/map_tmp&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/map_tmp" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Maze" />
       <option name="ENV_FILES" value="" />
@@ -110,6 +119,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="map_generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Maze" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/map_tmp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/map_tmp/map_generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.map_generator" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -318,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753964563516</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="优化代码格式，添加地图14、15。">
+      <option name="closed" value="true" />
+      <created>1754099167761</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1754099167761</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -393,6 +437,7 @@
     <MESSAGE value="设置图标，全局按钮圆角" />
     <MESSAGE value="全局图片圆角，修正文字位置" />
     <MESSAGE value="优化函数，添加地图13。" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化函数，添加地图13。" />
+    <MESSAGE value="优化代码格式，添加地图14、15。" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化代码格式，添加地图14、15。" />
   </component>
 </project>
