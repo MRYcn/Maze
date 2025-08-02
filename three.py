@@ -1,5 +1,6 @@
 import pygame
 
+
 class Three:
     def __init__(self, game):
         self.img = pygame.image.load('res/pic/three.png')

@@ -1,681 +1,827 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>迷宫大挑战</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-	margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(50, 48, 44, 1);
-}
-.highlight-gray {
-	color: rgba(115, 114, 110, 1);
-	fill: rgba(115, 114, 110, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(205, 60, 58, 1);
-	fill: rgba(205, 60, 58, 1);
-}
-.highlight-default_background {
-	color: rgba(50, 48, 44, 1);
-}
-.highlight-gray_background {
-	background: rgba(248, 248, 247, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(248, 243, 252, 1);
-}
-.highlight-pink_background {
-	background: rgba(252, 241, 246, 1);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(115, 114, 110, 1);
-	fill: rgba(115, 114, 110, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(205, 60, 58, 1);
-	fill: rgba(205, 60, 58, 1);
-}
-.block-color-default_background {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray_background {
-	background: rgba(248, 248, 247, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(248, 243, 252, 1);
-}
-.block-color-pink_background {
-	background: rgba(252, 241, 246, 1);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
-.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
-.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
-.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
-.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
-.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
-.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
-.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
-.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
-.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="23ccaa07-117f-8043-a840-ca91d1b21a95" class="page mono"><header><div class="page-header-icon undefined"><img class="icon" src="%E8%BF%B7%E5%AE%AB%E5%A4%A7%E6%8C%91%E6%88%98%2023ccaa07117f8043a840ca91d1b21a95/1753688223425.png"/></div><h1 class="page-title">迷宫大挑战</h1><p class="page-description"></p></header><div class="page-body"><p id="23fcaa07-117f-802e-8c32-f1c3b15229e6" class="">
-</p><p id="23ccaa07-117f-8034-8dfc-c46120e5cd2e" class="block-color-blue_background">致我的小学同学们：</p><p id="23ccaa07-117f-808c-906a-ed65bd2098e8" class="block-color-blue_background">  导航车、窨井盖、粘土商店……还记得小学时候的迷宫吗？从单一的黑白迷宫，到平原、山地主题，每一个主题何尝不是一个新的体验？现在，<em><strong>迷宫大挑战</strong></em>把它们搬回来了：导航车还是那个你，道路还是那个单向路。</p><p id="23ccaa07-117f-8085-988b-caca785bf85c" class="block-color-blue_background">  那些课桌上画的迷宫、抢着当&quot;第一个走出去&quot;的劲儿，这次换种方式，陪你再闯一次。</p><p id="23ccaa07-117f-8056-94e5-d472a5c5f050" class="block-color-blue_background">  来吗？这次，我们还是当年的&quot;迷宫高手&quot;。</p><p id="23ccaa07-117f-80ac-8780-efffce9a8ae0" class="block-color-gray_background">注：部分元素暂未设计入游戏中，随版本更新将逐步加入。</p><hr id="23ccaa07-117f-8082-9222-fcc57a4c18e3"/><p id="23ccaa07-117f-8010-8cab-fc7760c67c63" class="">迷宫大挑战是一个休闲类游戏，玩家操控车标在2D俯视角迷宫中移动，通过选择前进方向、利用道路层叠、并遵守相关规则，完成从起点到终点的既定路径。</p><h1 id="23ccaa07-117f-800d-975f-c4894c0f6d0c" class="">游戏特色</h1><hr id="23ccaa07-117f-8088-9564-d879d6a6addd"/><figure id="240caa07-117f-8095-978b-ddb340d64c50" class="image"><a href="https://ghp.ml1.one/https://raw.githubusercontent.com/MRYcn/Maze/refs/heads/main/docs/pic/Collage_20250730_085835.jpg"><img src="https://ghp.ml1.one/https://raw.githubusercontent.com/MRYcn/Maze/refs/heads/main/docs/pic/Collage_20250730_085835.jpg"/></a></figure><ul id="23ccaa07-117f-80c7-b3c9-f96887f3f549" class="bulleted-list"><li style="list-style-type:disc">仅需鼠标即可操作</li></ul><ul id="23ccaa07-117f-806c-bfb1-fb675eaa8ee3" class="bulleted-list"><li style="list-style-type:disc">清晰的标志、新手指导</li></ul><ul id="23ccaa07-117f-807f-80e4-f2653fe93e92" class="bulleted-list"><li style="list-style-type:disc">视觉友好，色彩舒适</li></ul><ul id="23ccaa07-117f-809b-8d14-c1db46dd7d41" class="bulleted-list"><li style="list-style-type:disc">逻辑解密性强</li></ul><ul id="23fcaa07-117f-8093-9f00-c436ae41b746" class="bulleted-list"><li style="list-style-type:disc">关卡众多</li></ul><ul id="23fcaa07-117f-8056-b14c-f954737e4a18" class="bulleted-list"><li style="list-style-type:disc">界面简约</li></ul><ul id="23fcaa07-117f-809b-b455-d58a92e18d46" class="bulleted-list"><li style="list-style-type:disc">经典玩法</li></ul><h1 id="23ccaa07-117f-8098-a6b1-e135095f10be" class="">兼容性</h1><hr id="23ccaa07-117f-8053-a046-ed41568f0e25"/><ul id="23ccaa07-117f-8001-a556-c7ee586bec8e" class="bulleted-list"><li style="list-style-type:disc">发行版（Release）：Windows7及以上，x86_64架构/x86架构</li></ul><ul id="23ccaa07-117f-80a4-a63f-c7b3d3115689" class="bulleted-list"><li style="list-style-type:disc">联系开发者：“各种”平台</li></ul><h1 id="23ccaa07-117f-807e-9362-d74005846e93" class="">下载&amp;配置&amp;运行</h1><hr id="23ccaa07-117f-8024-9558-fa1b8fe7466b"/><figure id="23ccaa07-117f-80e1-b423-eec5e9f57205"><a href="https://github.com/MRYcn/Maze/releases" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Releases · MRYcn/Maze</div><div class="bookmark-description">Contribute to MRYcn/Maze development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/MRYcn/Maze/releases</div></div><img src="https://opengraph.githubassets.com/ad474532d33d71e44903ffca6c98044588e54d6605a5846e0fdd31e8a40c3163/MRYcn/Maze" class="bookmark-image"/></a></figure><ol type="1" id="23ccaa07-117f-80f8-ad2e-e33b95e4c7c0" class="numbered-list" start="1"><li><mark class="highlight-red">阅读下文的注意事项</mark></li></ol><ol type="1" id="23ccaa07-117f-8047-9396-e54d88878e0f" class="numbered-list" start="2"><li>使用<strong>浏览器</strong>（不能是微信😡）下载上面的最新版zip压缩包</li></ol><ol type="1" id="23ccaa07-117f-80b2-ae38-c249c1c41f21" class="numbered-list" start="3"><li>解压到一个文件夹</li></ol><ol type="1" id="23ccaa07-117f-80ad-8f11-d8d0dc248da7" class="numbered-list" start="4"><li>运行xxx.bat，跟随提示完成配置</li></ol><ol type="1" id="23ccaa07-117f-80ef-8743-c63b03e85707" class="numbered-list" start="5"><li>运行yyy.bat启动游戏</li></ol><h1 id="23ccaa07-117f-80b8-859f-f15d43f04a97" class="">注意事项</h1><hr id="23ccaa07-117f-804a-a4ec-c2a2631187e2"/><figure id="23ccaa07-117f-8013-8ef5-e78cd7adb453"><a href="https://bgithub.xyz/MRYcn/Maze/releases" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://bgithub.xyz/MRYcn/Maze/releases</div></div></a></figure><ol type="1" id="23ccaa07-117f-801b-a5e8-de8a71b4aaae" class="numbered-list" start="1"><li>确保网络连接正常，访问、下载缓慢可尝试修改DNS、开启加速器或使用上面的镜像网站</li></ol><ol type="1" id="23ccaa07-117f-80fd-bc16-f345c02c80b4" class="numbered-list" start="2"><li>访问网页、下载文件时可能会被系统拦截、报毒，请放心访问、下载（不同浏览器选择继续访问的途径各不相同）</li></ol><ol type="1" id="23ccaa07-117f-80b8-886d-f9231bc78c2f" class="numbered-list" start="3"><li>运行文件时若提示相关权限，请放心授权</li></ol><ol type="1" id="23ccaa07-117f-8089-8747-e083cf5b8f02" class="numbered-list" start="4"><li>若配置成功，则以后只需直接运行yyy.bat启动游戏</li></ol><ol type="1" id="23ccaa07-117f-80fe-9056-fb76d656776a" class="numbered-list" start="5"><li>关闭游戏时，使用右上角关闭按钮，请勿使用其他软件强制关闭</li></ol><ol type="1" id="23dcaa07-117f-8003-8b91-d11fa7c28885" class="numbered-list" start="6"><li>用户数据保存在本地（当前用户家目录下），请勿手动修改</li></ol><h1 id="23ecaa07-117f-80a5-a803-dbe066077098" class="">备用链接</h1><hr id="23ecaa07-117f-80df-8c32-e0a79691090c"/><p id="23ecaa07-117f-806c-851d-fd8933227438" class="">https://mrycn.github.io/Maze</p><p id="23ecaa07-117f-800d-87e3-cabe1526545d" class="">https://pool-tempo-511.notion.site/23ccaa07117f8043a840ca91d1b21a95?pvs=4</p><h1 id="23ccaa07-117f-80da-8cc3-d082679c496e" class="">贡献者</h1><hr id="23ccaa07-117f-80ef-ac7e-c813bd3da88b"/><p id="23ccaa07-117f-80e0-b945-fc11255572b5" class="">程序设计：Byte豚(MRYcn)</p><p id="23ecaa07-117f-8056-8574-f74cf90de240" class="">美术设计：Lotus_Yi</p><h1 id="23ccaa07-117f-809a-bf26-d8b1e25386a9" class="">联系方式</h1><hr id="23ccaa07-117f-8035-a25f-fc2a5d14d7f1"/><p id="23ccaa07-117f-802d-8c07-d85219e2fac6" class="">开发者邮箱：</p><p id="23ccaa07-117f-80a3-98c8-cd9f24d8ab3e" class=""><a href="mailto:开发者邮箱：yrk202105152030@outlook.com">yrk202105152030@outlook.com</a> </p><p id="23ccaa07-117f-804b-ac76-cfe27ef19eae" class="">小Tip：遇到任何问题请找开发者</p><h1 id="23ccaa07-117f-8031-a269-c58cd83b0cbc" class="">License</h1><hr id="23ccaa07-117f-80a4-9c5a-cf836cf80d52"/><p id="23ccaa07-117f-805b-816a-c50c56e66ff4" class=""><em><strong>迷宫大挑战</strong></em> is licensed under MIT License.</p><p id="23fcaa07-117f-8030-84f5-d9c64a50f88c" class="">Copyright © 2025 MRYcn, Lotus_Yi All Rights Reserved.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>迷宫大挑战</title>
+    <style>
+        /* cspell:disable-file */
+        /* webkit printing magic: print all background colors */
+        html {
+            -webkit-print-color-adjust: exact;
+        }
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        @media only screen {
+            body {
+                margin: 2em auto;
+                max-width: 900px;
+                color: rgb(55, 53, 47);
+            }
+        }
+
+        body {
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+
+        a,
+        a.visited {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        .pdf-relative-link-path {
+            font-size: 80%;
+            color: #444;
+        }
+
+        h1,
+        h2,
+        h3 {
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 0.75em;
+        }
+
+        h1 {
+            font-size: 1.875rem;
+            margin-top: 1.875rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        .source {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 1.5em;
+            word-break: break-all;
+        }
+
+        .callout {
+            border-radius: 3px;
+            padding: 1rem;
+        }
+
+        figure {
+            margin: 1.25em 0;
+            page-break-inside: avoid;
+        }
+
+        figcaption {
+            opacity: 0.5;
+            font-size: 85%;
+            margin-top: 0.5em;
+        }
+
+        mark {
+            background-color: transparent;
+        }
+
+        .indented {
+            padding-left: 1.5em;
+        }
+
+        hr {
+            background: transparent;
+            display: block;
+            width: 100%;
+            height: 1px;
+            visibility: visible;
+            border: none;
+            border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        @media only print {
+            img {
+                max-height: 100vh;
+                object-fit: contain;
+            }
+        }
+
+        @page {
+            margin: 1in;
+        }
+
+        .collection-content {
+            font-size: 0.875rem;
+        }
+
+        .column-list {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            padding: 0 1em;
+        }
+
+        .column:first-child {
+            padding-left: 0;
+        }
+
+        .column:last-child {
+            padding-right: 0;
+        }
+
+        .table_of_contents-item {
+            display: block;
+            font-size: 0.875rem;
+            line-height: 1.3;
+            padding: 0.125rem;
+        }
+
+        .table_of_contents-indent-1 {
+            margin-left: 1.5rem;
+        }
+
+        .table_of_contents-indent-2 {
+            margin-left: 3rem;
+        }
+
+        .table_of_contents-indent-3 {
+            margin-left: 4.5rem;
+        }
+
+        .table_of_contents-link {
+            text-decoration: none;
+            opacity: 0.7;
+            border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid rgba(55, 53, 47, 0.09);
+            border-collapse: collapse;
+        }
+
+        table {
+            border-left: none;
+            border-right: none;
+        }
+
+        th,
+        td {
+            font-weight: normal;
+            padding: 0.25em 0.5em;
+            line-height: 1.5;
+            min-height: 1.5em;
+            text-align: left;
+        }
+
+        th {
+            color: rgba(55, 53, 47, 0.6);
+        }
+
+        ol,
+        ul {
+            margin: 0;
+            margin-block-start: 0.6em;
+            margin-block-end: 0.6em;
+        }
+
+        li > ol:first-child,
+        li > ul:first-child {
+            margin-block-start: 0.6em;
+        }
+
+        ul > li {
+            list-style: disc;
+        }
+
+        ul.to-do-list {
+            padding-inline-start: 0;
+        }
+
+        ul.to-do-list > li {
+            list-style: none;
+        }
+
+        .to-do-children-checked {
+            text-decoration: line-through;
+            opacity: 0.375;
+        }
+
+        ul.toggle > li {
+            list-style: none;
+        }
+
+        ul {
+            padding-inline-start: 1.7em;
+        }
+
+        ul > li {
+            padding-left: 0.1em;
+        }
+
+        ol {
+            padding-inline-start: 1.6em;
+        }
+
+        ol > li {
+            padding-left: 0.2em;
+        }
+
+        .mono ol {
+            padding-inline-start: 2em;
+        }
+
+        .mono ol > li {
+            text-indent: -0.4em;
+        }
+
+        .toggle {
+            padding-inline-start: 0em;
+            list-style-type: none;
+        }
+
+        /* Indent toggle children */
+        .toggle > li > details {
+            padding-left: 1.7em;
+        }
+
+        .toggle > li > details > summary {
+            margin-left: -1.1em;
+        }
+
+        .selected-value {
+            display: inline-block;
+            padding: 0 0.5em;
+            background: rgba(206, 205, 202, 0.5);
+            border-radius: 3px;
+            margin-right: 0.5em;
+            margin-top: 0.3em;
+            margin-bottom: 0.3em;
+            white-space: nowrap;
+        }
+
+        .collection-title {
+            display: inline-block;
+            margin-right: 1em;
+        }
+
+        .page-description {
+            margin-bottom: 2em;
+        }
+
+        .simple-table {
+            margin-top: 1em;
+            font-size: 0.875rem;
+            empty-cells: show;
+        }
+        .simple-table td {
+            height: 29px;
+            min-width: 120px;
+        }
+
+        .simple-table th {
+            height: 29px;
+            min-width: 120px;
+        }
+
+        .simple-table-header-color {
+            background: rgb(247, 246, 243);
+            color: black;
+        }
+        .simple-table-header {
+            font-weight: 500;
+        }
+
+        time {
+            opacity: 0.5;
+        }
+
+        .icon {
+            display: inline-block;
+            max-width: 1.2em;
+            max-height: 1.2em;
+            text-decoration: none;
+            vertical-align: text-bottom;
+            margin-right: 0.5em;
+        }
+
+        img.icon {
+            border-radius: 3px;
+        }
+
+        .user-icon {
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 100%;
+            margin-right: 0.5rem;
+        }
+
+        .user-icon-inner {
+            font-size: 0.8em;
+        }
+
+        .text-icon {
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        .page-cover-image {
+            display: block;
+            object-fit: cover;
+            width: 100%;
+            max-height: 30vh;
+        }
+
+        .page-header-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header-icon-with-cover {
+            margin-top: -0.72em;
+            margin-left: 0.07em;
+        }
+
+        .page-header-icon img {
+            border-radius: 3px;
+        }
+
+        .link-to-page {
+            margin: 1em 0;
+            padding: 0;
+            border: none;
+            font-weight: 500;
+        }
+
+        p > .user {
+            opacity: 0.5;
+        }
+
+        td > .user,
+        td > time {
+            white-space: nowrap;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.5);
+            margin-right: 0.6em;
+            vertical-align: middle;
+        }
+
+        p {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .image {
+            border: none;
+            margin: 1.5em 0;
+            padding: 0;
+            border-radius: 0;
+            text-align: center;
+        }
+
+        .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code-wrap {
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+
+        blockquote {
+            font-size: 1.25em;
+            margin: 1em 0;
+            padding-left: 1em;
+            border-left: 3px solid rgb(55, 53, 47);
+        }
+
+        .bookmark {
+            text-decoration: none;
+            max-height: 8em;
+            padding: 0;
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .bookmark-title {
+            font-size: 0.85em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 1.75em;
+            white-space: nowrap;
+        }
+
+        .bookmark-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bookmark-info {
+            flex: 4 1 180px;
+            padding: 12px 14px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bookmark-image {
+            width: 33%;
+            flex: 1 1 180px;
+            display: block;
+            position: relative;
+            object-fit: cover;
+            border-radius: 1px;
+        }
+
+        .bookmark-description {
+            color: rgba(55, 53, 47, 0.6);
+            font-size: 0.75em;
+            overflow: hidden;
+            max-height: 4.5em;
+            word-break: break-word;
+        }
+
+        .bookmark-href {
+            font-size: 0.75em;
+            margin-top: 0.25em;
+        }
+
+        .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+        .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+        .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+        .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+        .pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+        .pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+        .pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+        .pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+        .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+        .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+        .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+        .pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+        .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+        .pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+        .pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+        .pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+        .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+        .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+        .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+        .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+        .highlight-default {
+            color: rgba(50, 48, 44, 1);
+        }
+        .highlight-gray {
+            color: rgba(115, 114, 110, 1);
+            fill: rgba(115, 114, 110, 1);
+        }
+        .highlight-brown {
+            color: rgba(159, 107, 83, 1);
+            fill: rgba(159, 107, 83, 1);
+        }
+        .highlight-orange {
+            color: rgba(217, 115, 13, 1);
+            fill: rgba(217, 115, 13, 1);
+        }
+        .highlight-yellow {
+            color: rgba(203, 145, 47, 1);
+            fill: rgba(203, 145, 47, 1);
+        }
+        .highlight-teal {
+            color: rgba(68, 131, 97, 1);
+            fill: rgba(68, 131, 97, 1);
+        }
+        .highlight-blue {
+            color: rgba(51, 126, 169, 1);
+            fill: rgba(51, 126, 169, 1);
+        }
+        .highlight-purple {
+            color: rgba(144, 101, 176, 1);
+            fill: rgba(144, 101, 176, 1);
+        }
+        .highlight-pink {
+            color: rgba(193, 76, 138, 1);
+            fill: rgba(193, 76, 138, 1);
+        }
+        .highlight-red {
+            color: rgba(205, 60, 58, 1);
+            fill: rgba(205, 60, 58, 1);
+        }
+        .highlight-default_background {
+            color: rgba(50, 48, 44, 1);
+        }
+        .highlight-gray_background {
+            background: rgba(248, 248, 247, 1);
+        }
+        .highlight-brown_background {
+            background: rgba(244, 238, 238, 1);
+        }
+        .highlight-orange_background {
+            background: rgba(251, 236, 221, 1);
+        }
+        .highlight-yellow_background {
+            background: rgba(251, 243, 219, 1);
+        }
+        .highlight-teal_background {
+            background: rgba(237, 243, 236, 1);
+        }
+        .highlight-blue_background {
+            background: rgba(231, 243, 248, 1);
+        }
+        .highlight-purple_background {
+            background: rgba(248, 243, 252, 1);
+        }
+        .highlight-pink_background {
+            background: rgba(252, 241, 246, 1);
+        }
+        .highlight-red_background {
+            background: rgba(253, 235, 236, 1);
+        }
+        .block-color-default {
+            color: inherit;
+            fill: inherit;
+        }
+        .block-color-gray {
+            color: rgba(115, 114, 110, 1);
+            fill: rgba(115, 114, 110, 1);
+        }
+        .block-color-brown {
+            color: rgba(159, 107, 83, 1);
+            fill: rgba(159, 107, 83, 1);
+        }
+        .block-color-orange {
+            color: rgba(217, 115, 13, 1);
+            fill: rgba(217, 115, 13, 1);
+        }
+        .block-color-yellow {
+            color: rgba(203, 145, 47, 1);
+            fill: rgba(203, 145, 47, 1);
+        }
+        .block-color-teal {
+            color: rgba(68, 131, 97, 1);
+            fill: rgba(68, 131, 97, 1);
+        }
+        .block-color-blue {
+            color: rgba(51, 126, 169, 1);
+            fill: rgba(51, 126, 169, 1);
+        }
+        .block-color-purple {
+            color: rgba(144, 101, 176, 1);
+            fill: rgba(144, 101, 176, 1);
+        }
+        .block-color-pink {
+            color: rgba(193, 76, 138, 1);
+            fill: rgba(193, 76, 138, 1);
+        }
+        .block-color-red {
+            color: rgba(205, 60, 58, 1);
+            fill: rgba(205, 60, 58, 1);
+        }
+        .block-color-default_background {
+            color: inherit;
+            fill: inherit;
+        }
+        .block-color-gray_background {
+            background: rgba(248, 248, 247, 1);
+        }
+        .block-color-brown_background {
+            background: rgba(244, 238, 238, 1);
+        }
+        .block-color-orange_background {
+            background: rgba(251, 236, 221, 1);
+        }
+        .block-color-yellow_background {
+            background: rgba(251, 243, 219, 1);
+        }
+        .block-color-teal_background {
+            background: rgba(237, 243, 236, 1);
+        }
+        .block-color-blue_background {
+            background: rgba(231, 243, 248, 1);
+        }
+        .block-color-purple_background {
+            background: rgba(248, 243, 252, 1);
+        }
+        .block-color-pink_background {
+            background: rgba(252, 241, 246, 1);
+        }
+        .block-color-red_background {
+            background: rgba(253, 235, 236, 1);
+        }
+        .select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+        .select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+        .select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+        .select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+        .select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+        .select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+        .select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+        .select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+        .select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+        .select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+        .checkbox {
+            display: inline-flex;
+            vertical-align: text-bottom;
+            width: 16;
+            height: 16;
+            background-size: 16px;
+            margin-left: 2px;
+            margin-right: 5px;
+        }
+
+        .checkbox-on {
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+        }
+
+        .checkbox-off {
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+        }
+
+    </style>
+</head>
+<body>
+<article id="23ccaa07-117f-8043-a840-ca91d1b21a95" class="page mono">
+    <header>
+        <div class="page-header-icon undefined"><img class="icon"
+                                                     src="%E8%BF%B7%E5%AE%AB%E5%A4%A7%E6%8C%91%E6%88%98%2023ccaa07117f8043a840ca91d1b21a95/1753688223425.png"/>
+        </div>
+        <h1 class="page-title">迷宫大挑战</h1>
+        <p class="page-description"></p></header>
+    <div class="page-body"><p id="23fcaa07-117f-802e-8c32-f1c3b15229e6" class="">
+    </p>
+        <p id="23ccaa07-117f-8034-8dfc-c46120e5cd2e" class="block-color-blue_background">致我的小学同学们：</p>
+        <p id="23ccaa07-117f-808c-906a-ed65bd2098e8" class="block-color-blue_background">
+            导航车、窨井盖、粘土商店……还记得小学时候的迷宫吗？从单一的黑白迷宫，到平原、山地主题，每一个主题何尝不是一个新的体验？现在，<em><strong>迷宫大挑战</strong></em>把它们搬回来了：导航车还是那个你，道路还是那个单向路。
+        </p>
+        <p id="23ccaa07-117f-8085-988b-caca785bf85c" class="block-color-blue_background"> 那些课桌上画的迷宫、抢着当&quot;第一个走出去&quot;的劲儿，这次换种方式，陪你再闯一次。</p>
+        <p id="23ccaa07-117f-8056-94e5-d472a5c5f050" class="block-color-blue_background"> 来吗？这次，我们还是当年的&quot;迷宫高手&quot;。</p>
+        <p id="23ccaa07-117f-80ac-8780-efffce9a8ae0" class="block-color-gray_background">
+            注：部分元素暂未设计入游戏中，随版本更新将逐步加入。</p>
+        <hr id="23ccaa07-117f-8082-9222-fcc57a4c18e3"/>
+        <p id="23ccaa07-117f-8010-8cab-fc7760c67c63" class="">
+            迷宫大挑战是一个休闲类游戏，玩家操控车标在2D俯视角迷宫中移动，通过选择前进方向、利用道路层叠、并遵守相关规则，完成从起点到终点的既定路径。</p>
+        <h1 id="23ccaa07-117f-800d-975f-c4894c0f6d0c" class="">游戏特色</h1>
+        <hr id="23ccaa07-117f-8088-9564-d879d6a6addd"/>
+        <figure id="240caa07-117f-8095-978b-ddb340d64c50" class="image"><a
+                href="https://ghp.ml1.one/https://raw.githubusercontent.com/MRYcn/Maze/refs/heads/main/docs/pic/Collage_20250730_085835.jpg"><img
+                src="https://ghp.ml1.one/https://raw.githubusercontent.com/MRYcn/Maze/refs/heads/main/docs/pic/Collage_20250730_085835.jpg"/></a>
+        </figure>
+        <ul id="23ccaa07-117f-80c7-b3c9-f96887f3f549" class="bulleted-list">
+            <li style="list-style-type:disc">仅需鼠标即可操作</li>
+        </ul>
+        <ul id="23ccaa07-117f-806c-bfb1-fb675eaa8ee3" class="bulleted-list">
+            <li style="list-style-type:disc">清晰的标志、新手指导</li>
+        </ul>
+        <ul id="23ccaa07-117f-807f-80e4-f2653fe93e92" class="bulleted-list">
+            <li style="list-style-type:disc">视觉友好，色彩舒适</li>
+        </ul>
+        <ul id="23ccaa07-117f-809b-8d14-c1db46dd7d41" class="bulleted-list">
+            <li style="list-style-type:disc">逻辑解密性强</li>
+        </ul>
+        <ul id="23fcaa07-117f-8093-9f00-c436ae41b746" class="bulleted-list">
+            <li style="list-style-type:disc">关卡众多</li>
+        </ul>
+        <ul id="23fcaa07-117f-8056-b14c-f954737e4a18" class="bulleted-list">
+            <li style="list-style-type:disc">界面简约</li>
+        </ul>
+        <ul id="23fcaa07-117f-809b-b455-d58a92e18d46" class="bulleted-list">
+            <li style="list-style-type:disc">经典玩法</li>
+        </ul>
+        <h1 id="23ccaa07-117f-8098-a6b1-e135095f10be" class="">兼容性</h1>
+        <hr id="23ccaa07-117f-8053-a046-ed41568f0e25"/>
+        <ul id="23ccaa07-117f-8001-a556-c7ee586bec8e" class="bulleted-list">
+            <li style="list-style-type:disc">发行版（Release）：Windows7及以上，x86_64架构/x86架构</li>
+        </ul>
+        <ul id="23ccaa07-117f-80a4-a63f-c7b3d3115689" class="bulleted-list">
+            <li style="list-style-type:disc">联系开发者：“各种”平台</li>
+        </ul>
+        <h1 id="23ccaa07-117f-807e-9362-d74005846e93" class="">下载&amp;配置&amp;运行</h1>
+        <hr id="23ccaa07-117f-8024-9558-fa1b8fe7466b"/>
+        <figure id="23ccaa07-117f-80e1-b423-eec5e9f57205"><a href="https://github.com/MRYcn/Maze/releases"
+                                                             class="bookmark source">
+            <div class="bookmark-info">
+                <div class="bookmark-text">
+                    <div class="bookmark-title">Releases · MRYcn/Maze</div>
+                    <div class="bookmark-description">Contribute to MRYcn/Maze development by creating an account on
+                        GitHub.
+                    </div>
+                </div>
+                <div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/MRYcn/Maze/releases
+                </div>
+            </div>
+            <img src="https://opengraph.githubassets.com/ad474532d33d71e44903ffca6c98044588e54d6605a5846e0fdd31e8a40c3163/MRYcn/Maze"
+                 class="bookmark-image"/></a></figure>
+        <ol type="1" id="23ccaa07-117f-80f8-ad2e-e33b95e4c7c0" class="numbered-list" start="1">
+            <li>
+                <mark class="highlight-red">阅读下文的注意事项</mark>
+            </li>
+        </ol>
+        <ol type="1" id="23ccaa07-117f-8047-9396-e54d88878e0f" class="numbered-list" start="2">
+            <li>使用<strong>浏览器</strong>（不能是微信😡）下载上面的最新版zip压缩包</li>
+        </ol>
+        <ol type="1" id="23ccaa07-117f-80b2-ae38-c249c1c41f21" class="numbered-list" start="3">
+            <li>解压到一个文件夹</li>
+        </ol>
+        <ol type="1" id="23ccaa07-117f-80ad-8f11-d8d0dc248da7" class="numbered-list" start="4">
+            <li>运行xxx.bat，跟随提示完成配置</li>
+        </ol>
+        <ol type="1" id="23ccaa07-117f-80ef-8743-c63b03e85707" class="numbered-list" start="5">
+            <li>运行yyy.bat启动游戏</li>
+        </ol>
+        <h1 id="23ccaa07-117f-80b8-859f-f15d43f04a97" class="">注意事项</h1>
+        <hr id="23ccaa07-117f-804a-a4ec-c2a2631187e2"/>
+        <figure id="23ccaa07-117f-8013-8ef5-e78cd7adb453"><a href="https://bgithub.xyz/MRYcn/Maze/releases"
+                                                             class="bookmark source">
+            <div class="bookmark-info">
+                <div class="bookmark-text">
+                    <div class="bookmark-title"></div>
+                </div>
+                <div class="bookmark-href">https://bgithub.xyz/MRYcn/Maze/releases</div>
+            </div>
+        </a></figure>
+        <ol type="1" id="23ccaa07-117f-801b-a5e8-de8a71b4aaae" class="numbered-list" start="1">
+            <li>确保网络连接正常，访问、下载缓慢可尝试修改DNS、开启加速器或使用上面的镜像网站</li>
+        </ol>
+        <ol type="1" id="23ccaa07-117f-80fd-bc16-f345c02c80b4" class="numbered-list" start="2">
+            <li>访问网页、下载文件时可能会被系统拦截、报毒，请放心访问、下载（不同浏览器选择继续访问的途径各不相同）</li>
+        </ol>
+        <ol type="1" id="23ccaa07-117f-80b8-886d-f9231bc78c2f" class="numbered-list" start="3">
+            <li>运行文件时若提示相关权限，请放心授权</li>
+        </ol>
+        <ol type="1" id="23ccaa07-117f-8089-8747-e083cf5b8f02" class="numbered-list" start="4">
+            <li>若配置成功，则以后只需直接运行yyy.bat启动游戏</li>
+        </ol>
+        <ol type="1" id="23ccaa07-117f-80fe-9056-fb76d656776a" class="numbered-list" start="5">
+            <li>关闭游戏时，使用右上角关闭按钮，请勿使用其他软件强制关闭</li>
+        </ol>
+        <ol type="1" id="23dcaa07-117f-8003-8b91-d11fa7c28885" class="numbered-list" start="6">
+            <li>用户数据保存在本地（当前用户家目录下），请勿手动修改</li>
+        </ol>
+        <h1 id="23ecaa07-117f-80a5-a803-dbe066077098" class="">备用链接</h1>
+        <hr id="23ecaa07-117f-80df-8c32-e0a79691090c"/>
+        <p id="23ecaa07-117f-806c-851d-fd8933227438" class="">https://mrycn.github.io/Maze</p>
+        <p id="23ecaa07-117f-800d-87e3-cabe1526545d" class="">
+            https://pool-tempo-511.notion.site/23ccaa07117f8043a840ca91d1b21a95?pvs=4</p>
+        <h1 id="23ccaa07-117f-80da-8cc3-d082679c496e" class="">贡献者</h1>
+        <hr id="23ccaa07-117f-80ef-ac7e-c813bd3da88b"/>
+        <p id="23ccaa07-117f-80e0-b945-fc11255572b5" class="">程序设计：Byte豚(MRYcn)</p>
+        <p id="23ecaa07-117f-8056-8574-f74cf90de240" class="">美术设计：Lotus_Yi</p>
+        <h1 id="23ccaa07-117f-809a-bf26-d8b1e25386a9" class="">联系方式</h1>
+        <hr id="23ccaa07-117f-8035-a25f-fc2a5d14d7f1"/>
+        <p id="23ccaa07-117f-802d-8c07-d85219e2fac6" class="">开发者邮箱：</p>
+        <p id="23ccaa07-117f-80a3-98c8-cd9f24d8ab3e" class=""><a href="mailto:开发者邮箱：yrk202105152030@outlook.com">yrk202105152030@outlook.com</a>
+        </p>
+        <p id="23ccaa07-117f-804b-ac76-cfe27ef19eae" class="">小Tip：遇到任何问题请找开发者</p>
+        <h1 id="23ccaa07-117f-8031-a269-c58cd83b0cbc" class="">License</h1>
+        <hr id="23ccaa07-117f-80a4-9c5a-cf836cf80d52"/>
+        <p id="23ccaa07-117f-805b-816a-c50c56e66ff4" class=""><em><strong>迷宫大挑战</strong></em> is licensed under MIT
+            License.</p>
+        <p id="23fcaa07-117f-8030-84f5-d9c64a50f88c" class="">Copyright © 2025 MRYcn, Lotus_Yi All Rights Reserved.</p>
+    </div>
+</article>
+<span class="sans" style="font-size:14px;padding-top:2em"></span></body>
+</html>
