@@ -10,7 +10,7 @@ class UI7:
         self.navigator = game.navigator
         self.screen = game.screen
         self.back_rect = None
-        self.font = pygame.font.Font('res/font/DFPGB_Y5.ttf', 30)
+        self.font = pygame.font.Font(game.resource_path('res/font/DFPGB_Y5.ttf'), 30)
         self.back_text = self.font.render('<<返回', True, (0, 0, 0), None)
         # self.back_suf = pt.scale(pygame.image.load('res/pic/ui0_suf.png'),(110,35))
         # self.back_suf.set_alpha(100)
@@ -19,7 +19,7 @@ class UI7:
             if 'guidance' in map_dict.keys():
                 self.guidance_dict[i + 1] = map_dict['guidance']
         self.current_guidance_suf_locs = {}
-        self.bg = pygame.image.load('res/pic/game_bg.png')
+        self.bg = pygame.image.load(game.resource_path('res/pic/game_bg.png'))
 
     def display(self):
         self.screen.fill((0, 0, 0))
@@ -48,13 +48,13 @@ class UI7:
             return
         for i in self.guidance_dict[level]:
             if i[0] == 'start':
-                suf = pt.scale(pygame.image.load('res/pic/start.png'), (35, 35))
+                suf = pt.scale(pygame.image.load(self.game.resource_path('res/pic/start.png')), (35, 35))
             elif i[0] == 'end':
-                suf = pt.scale(pygame.image.load('res/pic/end.png'), (35, 35))
+                suf = pt.scale(pygame.image.load(self.game.resource_path('res/pic/end.png')), (35, 35))
             elif i[0] == 'straight':
-                suf = pt.scale(pygame.image.load('res/pic/straight.png'), (35, 35))
+                suf = pt.scale(pygame.image.load(self.game.resource_path('res/pic/straight.png')), (35, 35))
             elif i[0] == 'navigator':
-                suf = pt.scale(pygame.image.load('res/pic/navigator.png'), (55, 55))
+                suf = pt.scale(pygame.image.load(self.game.resource_path('res/pic/navigator.png')), (55, 55))
             else:
                 suf = self.font.render(i[0], True, (0, 0, 0), None)
             loc = i[1]

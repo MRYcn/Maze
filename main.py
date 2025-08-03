@@ -1,3 +1,4 @@
+import os
 import sys
 from datetime import datetime
 from threading import Thread
@@ -29,8 +30,8 @@ class Game:
         height = int(screeninfo.current_h * 3 / 4)
         self.screen = pygame.display.set_mode((width, height), pygame.RESIZABLE)
         pygame.display.set_caption('迷宫大挑战')
-        pygame.display.set_icon(pygame.image.load('res/pic/icon.png'))
-        self.bg = pygame.image.load('res/pic/bg.png')
+        pygame.display.set_icon(pygame.image.load(self.resource_path('res/pic/icon.png')))
+        self.bg = pygame.image.load(self.resource_path('res/pic/bg.png'))
 
         self.clock = pygame.time.Clock()
         self.mouse_leftdown = False
@@ -193,6 +194,13 @@ class Game:
         self.ui9 = UI9(self)
         self.ui10 = UI10(self)
         self.ui11 = UI11(self)
+
+    def resource_path(self,path):
+        try:
+            base_path=sys._MEIPASS
+        except:
+            base_path=os.path.abspath('.')
+        return os.path.join(base_path,path)
 
 
 if __name__ == '__main__':

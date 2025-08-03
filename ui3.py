@@ -8,7 +8,7 @@ class UI3:
     def __init__(self, game):
         self.game = game
         self.back_rect = self.copy_rect = self.update_rect = None
-        font = pygame.font.Font('res/font/DFPGB_Y5.ttf', 45)
+        font = pygame.font.Font(game.resource_path('res/font/DFPGB_Y5.ttf'), 45)
         texts = ['软件名：迷宫大挑战',
                  '版本：1.0.0',
                  '程序设计：Byte豚/MRYcn，美术设计：Lotus_Yi',
@@ -19,7 +19,7 @@ class UI3:
         self.about_texts = [font.render(text, True, (0, 0, 0), None) for text in texts]
         self.back_text = font.render('<<返回', True, (0, 0, 0), None)
 
-        self.update_suf = pygame.image.load('res/pic/ui0_suf.png')
+        self.update_suf = pygame.image.load(game.resource_path('res/pic/ui0_suf.png'))
         self.update_suf.set_alpha((150))
         self.update_text = font.render('访问官网', True, (0, 0, 0), None)
 

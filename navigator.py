@@ -8,7 +8,7 @@ from maps import Map_Manager
 
 class Navigator:
     def __init__(self, game):
-        self.img = pygame.image.load('res/pic/navigator.png')
+        self.img = pygame.image.load(game.resource_path('res/pic/navigator.png'))
         self.img.set_alpha(200)
         self.game = game
         self.RW = game.REF_WIDTH

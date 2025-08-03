@@ -7,7 +7,7 @@ class UI2:
     def __init__(self, game):
         self.game = game
         self.back_rect = None
-        font = pygame.font.Font('res/font/DFPGB_Y5.ttf', 45)
+        font = pygame.font.Font(game.resource_path('res/font/DFPGB_Y5.ttf'), 45)
         texts = ['玩家操控车标在2D俯视',
                  '角迷宫中移动，通过选',
                  '择前进方向、利用道路',

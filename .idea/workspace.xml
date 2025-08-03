@@ -8,17 +8,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="优化代码格式，添加地图14、15。">
+    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="修复地图13问题，清理文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/end.png.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/floor.png.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/four.png.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/impasse.png.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/navigator.png.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/start.png.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/straight.png.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/three.png.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/turn.png.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrow.py" beforeDir="false" afterPath="$PROJECT_DIR$/arrow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/end.py" beforeDir="false" afterPath="$PROJECT_DIR$/end.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/floor.py" beforeDir="false" afterPath="$PROJECT_DIR$/floor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/four.py" beforeDir="false" afterPath="$PROJECT_DIR$/four.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/impasse.py" beforeDir="false" afterPath="$PROJECT_DIR$/impasse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigator.py" beforeDir="false" afterPath="$PROJECT_DIR$/navigator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/font/华文行楷.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/res/font/hwxk.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/straight.py" beforeDir="false" afterPath="$PROJECT_DIR$/straight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/three.py" beforeDir="false" afterPath="$PROJECT_DIR$/three.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/turn.py" beforeDir="false" afterPath="$PROJECT_DIR$/turn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui0.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui1.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui10.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui11.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui2.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui4.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui5.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui6.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui6.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui7.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui9.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui9.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -362,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754099167761</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="修复地图13问题，清理文件">
+      <option name="closed" value="true" />
+      <created>1754132974228</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1754132974228</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -438,6 +460,7 @@
     <MESSAGE value="全局图片圆角，修正文字位置" />
     <MESSAGE value="优化函数，添加地图13。" />
     <MESSAGE value="优化代码格式，添加地图14、15。" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化代码格式，添加地图14、15。" />
+    <MESSAGE value="修复地图13问题，清理文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复地图13问题，清理文件" />
   </component>
 </project>

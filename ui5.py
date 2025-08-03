@@ -7,12 +7,12 @@ class UI5:
     def __init__(self, game):
         self.game = game
         self.suf1_rect = self.back_rect = None
-        font1 = pygame.font.Font('res/font/DFPGB_Y5.ttf', 50)
-        self.suf1 = pygame.image.load('res/pic/user.png')
+        font1 = pygame.font.Font(game.resource_path('res/font/DFPGB_Y5.ttf'), 50)
+        self.suf1 = pygame.image.load(game.resource_path('res/pic/user.png'))
         self.suf1.set_alpha((150))
         self.suf1_text = font1.render('用户', True, (0, 0, 0), None)
 
-        font2 = pygame.font.Font('res/font/DFPGB_Y5.ttf', 45)
+        font2 = pygame.font.Font(game.resource_path('res/font/DFPGB_Y5.ttf'), 45)
         self.back = font2.render('<<返回', True, (0, 0, 0), None)
 
     def display(self):

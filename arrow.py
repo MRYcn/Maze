@@ -9,7 +9,7 @@ class Arrow:
             self.flip = type[1]
         except:
             self.flip = False
-        self.img = pygame.image.load(f'res/pic/{self.type}.png')
+        self.img = pygame.image.load(game.resource_path(f'res/pic/{self.type}.png'))
         self.loc = ()
         self.ang = 0
 

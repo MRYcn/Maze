@@ -3,7 +3,7 @@ import pygame
 
 class Four:
     def __init__(self, game):
-        self.img = pygame.image.load('res/pic/four.png')
+        self.img = pygame.image.load(game.resource_path('res/pic/four.png'))
         self.game = game
         self.loc = ()
         self.ang = 0

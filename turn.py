@@ -3,7 +3,7 @@ import pygame
 
 class Turn:
     def __init__(self, game):
-        self.img = pygame.image.load('res/pic/turn.png')
+        self.img = pygame.image.load(game.resource_path('res/pic/turn.png'))
         self.game = game
         self.loc = ()
         self.ang = 0

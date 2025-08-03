@@ -3,7 +3,7 @@ import pygame
 
 class Floor:
     def __init__(self, game):
-        self.img = pygame.image.load('res/pic/floor.png')
+        self.img = pygame.image.load(game.resource_path('res/pic/floor.png'))
         self.game = game
         self.loc = ()
         self.ang = 0

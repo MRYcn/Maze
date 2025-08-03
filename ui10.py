@@ -8,16 +8,16 @@ class UI10:
         self.game = game
         self.back_rect = None
         self.suf2_rect = None
-        font1 = pygame.font.Font('res/font/DFPGB_Y5.ttf', 35)
-        self.suf1 = pygame.image.load('res/pic/username.png')
+        font1 = pygame.font.Font(game.resource_path('res/font/DFPGB_Y5.ttf'), 35)
+        self.suf1 = pygame.image.load(game.resource_path('res/pic/username.png'))
         self.suf1.set_alpha((150))
         self.suf1_text = font1.render('用户名：', True, (0, 0, 0), None)
         self.username = font1.render(self.game.data['user']['name'], True, (0, 0, 0), None)
-        self.suf2 = pygame.image.load('res/pic/suspend.png')
+        self.suf2 = pygame.image.load(game.resource_path('res/pic/suspend.png'))
         self.suf2.set_alpha((150))
         self.suf2_text = font1.render('注销', True, (0, 0, 0), None)
 
-        font2 = pygame.font.Font('res/font/DFPGB_Y5.ttf', 45)
+        font2 = pygame.font.Font(game.resource_path('res/font/DFPGB_Y5.ttf'), 45)
         self.back = font2.render('<<返回', True, (0, 0, 0), None)
 
     def display(self):

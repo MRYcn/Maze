@@ -3,7 +3,7 @@ import pygame
 
 class End:
     def __init__(self, game):
-        self.img = pygame.image.load('res/pic/end.png')
+        self.img = pygame.image.load(game.resource_path('res/pic/end.png'))
         self.game = game
         self.loc = ()
         self.ang = 0

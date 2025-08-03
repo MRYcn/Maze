@@ -12,13 +12,13 @@ class UI4:
         self.suf_rects = []
         self.back_rect = None
         self.slider_rect = None
-        font1 = pygame.font.Font('res/font/DFPGB_Y5.ttf', 45)
+        font1 = pygame.font.Font(game.resource_path('res/font/DFPGB_Y5.ttf'), 45)
         self.back = font1.render('<<返回', True, (0, 0, 0), None)
 
         self.level_num = self.mm.get_level_num()
         self.sufs = [pygame.Surface((200, 400)) for _ in range(self.level_num)]
         for i in range(self.level_num):
-            self.sufs[i] = pygame.image.load(f'res/pic/level{i + 1}.png')
+            self.sufs[i] = pygame.image.load(game.resource_path(f'res/pic/level{i + 1}.png'))
             # self.sufs[i].set_alpha((150))
         self.sufs_init_locs = [(342 + i * 300, 320) for i in range(self.level_num)]
         self.sufs_locs = self.sufs_init_locs[::]
@@ -27,17 +27,17 @@ class UI4:
         self.level_texts = [font1.render(text, True, (0, 0, 0), None) for text in texts]
 
         self.update_progress()
-        self.finished_icon = pygame.image.load('res/pic/finished_icon.png')
+        self.finished_icon = pygame.image.load(game.resource_path('res/pic/finished_icon.png'))
 
-        self.slider_back = pygame.image.load('res/pic/slider_back.png')
+        self.slider_back = pygame.image.load(game.resource_path('res/pic/slider_back.png'))
         self.slider_back.set_alpha(150)
         self.slider_width = 2000 / (self.level_num - 1)
         self.slider_init_loc = (142 + self.slider_width / 2, 575)
         self.slider_max_loc = (1142 - self.slider_width / 2, 575)
         self.slider_loc = self.slider_init_loc
-        self.slider = pt.scale(pygame.image.load('res/pic/slider.png'), (self.slider_width, 35))
+        self.slider = pt.scale(pygame.image.load(game.resource_path('res/pic/slider.png')), (self.slider_width, 35))
         self.slider.set_alpha(180)
-        font2 = pygame.font.Font('res/font/DFPGB_Y5.ttf', 25)
+        font2 = pygame.font.Font(self.game.resource_path('res/font/DFPGB_Y5.ttf'), 25)
         self.slider_text = font2.render('点击（非长按）以移动滚动条', True, (0, 0, 0), None)
 
     def display(self):
