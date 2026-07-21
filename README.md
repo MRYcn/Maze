@@ -9,7 +9,7 @@
 
 # 游戏特色
 
-![](https://ghp.ml1.one/https://raw.githubusercontent.com/MRYcn/Maze/refs/heads/main/docs/pic/Collage_20250730_085835.jpg)
+![](https://raw.githubusercontent.com/MRYcn/Maze/refs/heads/main/docs/pic/Collage_20250730_085835.jpg)
 
 - 仅需鼠标即可操作
 - 清晰的标志、新手指导
