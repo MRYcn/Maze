@@ -14,6 +14,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -70,7 +71,7 @@
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/mry/下载/Maze/map_tmp",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -412,6 +413,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <MESSAGE value="initial push" />
     <MESSAGE value="添加过关界面；禁止180度调头" />
     <MESSAGE value="UI4滚轮判断、反应取消鼠标滚轮，用鼠标点击代替。" />
@@ -438,5 +441,8 @@
     <MESSAGE value="优化代码格式，添加地图14、15。" />
     <MESSAGE value="修复地图13问题，清理文件" />
     <option name="LAST_COMMIT_MESSAGE" value="修复地图13问题，清理文件" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Maze$main.coverage" NAME="main 覆盖结果" MODIFIED="1787744460726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
