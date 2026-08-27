@@ -54,7 +54,7 @@ class Game:
         self.st = 0
         self.beginning = True
 
-        pygame.mixer.music.load(self.resource_path("res/audio/atlasaudio-ambient-atmosphere-511882.mp3"))
+        pygame.mixer.music.load(self.resource_path("res/audio/background.ogg"))
         pygame.mixer.music.set_volume(0.5)
 
     def run(self):
@@ -115,7 +115,7 @@ class Game:
             self.ui5.display()
             if self.press_pos:
                 self.ui5.update(self.press_pos)
-        elif self.st == 6:  # signal: waiting for update
+        elif self.st == 6:  # ranking, waiting for update
             self.ui6.display()
             if self.press_pos:
                 self.ui6.update(self.press_pos)

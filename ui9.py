@@ -17,7 +17,12 @@ class UI9:
         self.back_suf.set_alpha(150)
         self.back_font = font2.render('返回', True, (0, 0, 0), None)
 
+        self.sound_effect = pygame.mixer.Sound(game.resource_path("res/audio/completion.ogg"))
+        self.sound_effect.set_volume(0.2)
+        self.sound_effect_playing = False
+
     def display(self):
+        self.sound_keeping()
         self.game.blit_to_sc(self.result, (642, 200), 0)
         self.back_rect = self.game.blit_to_sc(self.back_suf, (642, 450), 0)
         self.game.blit_to_sc(self.back_font, (642, 450), 0)
@@ -25,3 +30,11 @@ class UI9:
     def update(self, press_pos):
         if self.back_rect.collidepoint(press_pos):
             self.game.st = 4
+            if self.sound_effect_playing:
+                self.sound_effect.stop()
+                self.sound_effect_playing = False
+
+    def sound_keeping(self):
+        if not self.sound_effect_playing:
+            self.sound_effect.play()
+            self.sound_effect_playing = True
