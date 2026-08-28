@@ -43,4 +43,5 @@
 # License
 
 ***迷宫大挑战*** is licensed under MIT License.  
+For detail, see LICENSE.
 Copyright © 2026 MRYcn, Lotus_Yi
