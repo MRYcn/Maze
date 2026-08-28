@@ -35,6 +35,8 @@ class Game:
         self.bg = pygame.image.load(self.resource_path('res/pic/bg.png'))
 
         self.clock = pygame.time.Clock()
+        self.dt = 0
+
         self.mouse_leftdown = False
         self.mouse_wheel = False
         self.mouse_pos = False
@@ -42,6 +44,8 @@ class Game:
         self.gaming = False
         self.screen_size = None
         self.w = self.h = None
+
+        self.coin_count = 1
 
         self.dm = Data_Manager()
         self.data = None
@@ -69,7 +73,7 @@ class Game:
             if self.gaming:
                 self.run_game()
                 pygame.display.flip()
-                self.clock.tick(60)
+                self.dt = self.clock.tick(60)
         pygame.mixer.music.stop()
 
     def check_event(self):

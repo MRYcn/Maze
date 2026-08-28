@@ -36,6 +36,7 @@ class UI9:
             if self.sound_effect_playing:
                 self.sound_effect.stop()
                 self.sound_effect_playing = False
+            self.game.ui7.coin_all_alpha = 150
 
     def sound_keeping(self):
         if not self.sound_effect_playing:

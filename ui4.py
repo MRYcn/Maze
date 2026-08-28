@@ -42,7 +42,21 @@ class UI4:
 
         self.click_effect = game.click_effect
 
+        self.coin_back = pygame.image.load(game.resource_path('res/pic/coin_back.png'))
+        self.coin_back.set_alpha(150)
+        self.coin_sufs = []
+        for i in range(1, 10):
+            img = pygame.image.load(game.resource_path(f'res/pic/coins/coin_{i}.png'))
+            self.coin_sufs.append(img)
+        self.timer = 0
+        self.coin_font = pygame.font.Font(game.resource_path('res/font/DFPGB_Y5.ttf'), 30)
+        self.coin_num = self.game.data['data']['coins']
+        self.update_coin()
+
     def display(self):
+        if self.coin_num != self.game.data['data']['coins']:
+            self.update_coin()
+            self.coin_num = self.game.data['data']['coins']
         self.back_rect = self.game.blit_to_sc(self.back, (125, 80), 0)
         self.slider_rect = self.game.blit_to_sc(self.slider_back, (642, 575), 0)
         self.game.blit_to_sc(self.slider, self.slider_loc, 0)
@@ -54,6 +68,17 @@ class UI4:
             self.game.blit_to_sc(self.level_texts[i], (self.sufs_locs[i][0], 480), 0)
         for loc in self.finished_locs:
             self.game.blit_to_sc(self.finished_icon, loc, 0)
+
+        self.game.blit_to_sc(self.coin_back, (640, 30), 0) # 绘制金币
+        self.game.blit_to_sc(self.coin_sufs[self.game.coin_count - 1], (600, 30), 0)
+        self.timer += self.game.dt
+        if self.timer >= 200:
+            self.timer -= 200
+            if self.game.coin_count < 9:
+                self.game.coin_count += 1
+            else:
+                self.game.coin_count = 1
+        self.game.blit_to_sc(self.coin_num_suf, (660,28), 0)
 
     def update(self, press_pos=False, mouse_wheel=False):
         self.click_effect.play()
@@ -85,9 +110,13 @@ class UI4:
         if self.map != self.game.data['data']['map']:
             self.map = self.game.data['data']['map'][::]
 
+
     def update_progress(self): #获取用户进度，绘制对勾
         self.finished_locs = []
         for i, loc in enumerate(self.sufs_locs):
             loc = (loc[0] + 55, 160)
             if i + 1 in self.game.data['data']['map']:
                 self.finished_locs.append(loc)
+
+    def update_coin(self):
+        self.coin_num_suf = self.coin_font.render(str(self.game.data['data']['coins']), True, (0, 0, 0), None)

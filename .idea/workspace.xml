@@ -8,13 +8,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="更新，测试">
-      <change afterPath="$PROJECT_DIR$/res/audio/background.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/audio/completion.ogg" afterDir="false" />
+    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="添加点击音效">
+      <change afterPath="$PROJECT_DIR$/res/pic/coin_back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/res/audio/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/atlasaudio-ambient-atmosphere-511882.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigator.py" beforeDir="false" afterPath="$PROJECT_DIR$/navigator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pic/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui4.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui7.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui7.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui9.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui9.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,10 +92,18 @@
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/mry/下载/Maze/map_tmp",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "advanced.settings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="Maze" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="Maze" />
+      </console-settings>
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/map_tmp" />
@@ -163,7 +183,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1751866237341</updated>
-      <workItem from="1787796298758" duration="1589000" />
+      <workItem from="1787796298758" duration="1727000" />
+      <workItem from="1787810775100" duration="4309000" />
+      <workItem from="1787884688077" duration="12760000" />
     </task>
     <task id="LOCAL-00001" summary="initial push">
       <option name="closed" value="true" />
@@ -381,7 +403,23 @@
       <option name="project" value="LOCAL" />
       <updated>1787745380590</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="优化文件格式，添加结算音效">
+      <option name="closed" value="true" />
+      <created>1787797928229</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1787797928229</updated>
+    </task>
+    <task id="LOCAL-00029" summary="添加点击音效">
+      <option name="closed" value="true" />
+      <created>1787884756617</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1787884756617</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,7 +461,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -438,8 +476,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="添加过关界面；禁止180度调头" />
-    <MESSAGE value="UI4滚轮判断、反应取消鼠标滚轮，用鼠标点击代替。" />
     <MESSAGE value="创建简单用户文件并实现读写" />
     <MESSAGE value="创建用户数据页面" />
     <MESSAGE value="创建新手指导页面，优化游戏页面管理" />
@@ -463,9 +499,11 @@
     <MESSAGE value="优化代码格式，添加地图14、15。" />
     <MESSAGE value="修复地图13问题，清理文件" />
     <MESSAGE value="更新，测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新，测试" />
+    <MESSAGE value="优化文件格式，添加结算音效" />
+    <MESSAGE value="添加点击音效" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加点击音效" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Maze$main.coverage" NAME="main 覆盖结果" MODIFIED="1787797728847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Maze$main.coverage" NAME="main 覆盖结果" MODIFIED="1787905999581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

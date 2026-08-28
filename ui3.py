@@ -13,7 +13,7 @@ class UI3:
                  '版本：1.0.0',
                  '程序设计：Byte豚/MRYcn，美术设计：Lotus_Yi',
                  '联系方式：yrk202105152030@outlook.com',
-                 '许可证：MIT License',
+                 '开源许可证：MIT License，详见LICENSE',
                  '获取更新：联系开发者/访问官网'
                  ]
         self.about_texts = [font.render(text, True, (0, 0, 0), None) for text in texts]

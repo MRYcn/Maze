@@ -7,7 +7,7 @@ from packaging import version
 class Data_Manager:
     def __init__(self):
         self.DEF_DATA = {
-            'version': '1.0.1',
+            'version': '1.0.2',
             'user': {
                 'id': str(uuid.uuid4()),
                 'name': 'Guest',
@@ -23,7 +23,8 @@ class Data_Manager:
                 'map': [0],
                 'preference': {
                     'directional_guidance': True
-                }
+                },
+                'coins': 0
             }
         }
         USER_HOME = os.path.expanduser('~')
