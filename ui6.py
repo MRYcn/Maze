@@ -15,6 +15,8 @@ class UI6:
         ]
         self.signal_texts = [font1.render(text, True, (0, 0, 0), None) for text in texts]
 
+        self.click_effect = game.click_effect
+
     def display(self):
         self.back_rect = self.game.blit_to_sc(self.back, (125, 80), 0)
         y = 250
@@ -23,5 +25,6 @@ class UI6:
             y += 50
 
     def update(self, press_pos):
+        self.click_effect.play()
         if self.back_rect.collidepoint(press_pos):
             self.game.st = 1

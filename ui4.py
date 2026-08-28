@@ -40,6 +40,8 @@ class UI4:
         font2 = pygame.font.Font(self.game.resource_path('res/font/DFPGB_Y5.ttf'), 25)
         self.slider_text = font2.render('点击（非长按）以移动滚动条', True, (0, 0, 0), None)
 
+        self.click_effect = game.click_effect
+
     def display(self):
         self.back_rect = self.game.blit_to_sc(self.back, (125, 80), 0)
         self.slider_rect = self.game.blit_to_sc(self.slider_back, (642, 575), 0)
@@ -54,6 +56,7 @@ class UI4:
             self.game.blit_to_sc(self.finished_icon, loc, 0)
 
     def update(self, press_pos=False, mouse_wheel=False):
+        self.click_effect.play()
         if self.back_rect.collidepoint(press_pos):
             self.game.st = 1
         for i, rect in enumerate(self.suf_rects):

@@ -20,6 +20,8 @@ class UI10:
         font2 = pygame.font.Font(game.resource_path('res/font/DFPGB_Y5.ttf'), 45)
         self.back = font2.render('<<返回', True, (0, 0, 0), None)
 
+        self.click_effect = game.click_effect
+
     def display(self):
         self.game.blit_to_sc(self.suf1, (342, 320), 0)
         self.game.blit_to_sc(self.suf1_text, (342, 160), 0)
@@ -29,6 +31,7 @@ class UI10:
         self.back_rect = self.game.blit_to_sc(self.back, (125, 80), 0)
 
     def update(self, press_pos):
+        self.click_effect.play()
         if self.back_rect.collidepoint(press_pos):
             self.game.st = 5
         elif self.suf2_rect.collidepoint(press_pos):

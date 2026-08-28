@@ -23,6 +23,8 @@ class UI3:
         self.update_suf.set_alpha((150))
         self.update_text = font.render('访问官网', True, (0, 0, 0), None)
 
+        self.click_effect = game.click_effect
+
     def display(self):
         y = 150
         for text in self.about_texts:
@@ -33,6 +35,7 @@ class UI3:
         self.game.blit_to_sc(self.update_text, (642, 480), 0)
 
     def update(self, press_pos):
+        self.click_effect.play()
         if self.back_rect.collidepoint(press_pos):
             self.game.st = 0
         elif self.update_rect.collidepoint(press_pos):

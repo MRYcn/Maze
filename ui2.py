@@ -17,6 +17,8 @@ class UI2:
         self.intro_texts = [font.render(text, True, (0, 0, 0), None) for text in texts]
         self.back_text = font.render('<<返回', True, (0, 0, 0), None)
 
+        self.click_effect = game.click_effect
+
     def display(self):
         y = 150
         for text in self.intro_texts:
@@ -25,5 +27,6 @@ class UI2:
         self.back_rect = self.game.blit_to_sc(self.back_text, (125, 80), 0)
 
     def update(self, press_pos):
+        self.click_effect.play()
         if self.back_rect.collidepoint(press_pos):
             self.game.st = 0

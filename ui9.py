@@ -21,6 +21,8 @@ class UI9:
         self.sound_effect.set_volume(0.2)
         self.sound_effect_playing = False
 
+        self.click_effect = game.click_effect
+
     def display(self):
         self.sound_keeping()
         self.game.blit_to_sc(self.result, (642, 200), 0)
@@ -28,6 +30,7 @@ class UI9:
         self.game.blit_to_sc(self.back_font, (642, 450), 0)
 
     def update(self, press_pos):
+        self.click_effect.play()
         if self.back_rect.collidepoint(press_pos):
             self.game.st = 4
             if self.sound_effect_playing:

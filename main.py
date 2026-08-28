@@ -47,6 +47,13 @@ class Game:
         self.data = None
         self.on_game_start()
 
+        #音乐管理
+        self.click_effect = pygame.mixer.Sound(self.resource_path("res/audio/click_effect.ogg"))
+        self.click_effect.set_volume(0.3)
+
+        pygame.mixer.music.load(self.resource_path("res/audio/background.ogg"))
+        pygame.mixer.music.set_volume(0.5)
+
         self.ui0 = UI0(self)
         self.init_thread = Thread(target=self.init_uis)
         self.init_thread.start()
@@ -54,12 +61,9 @@ class Game:
         self.st = 0
         self.beginning = True
 
-        pygame.mixer.music.load(self.resource_path("res/audio/background.ogg"))
-        pygame.mixer.music.set_volume(0.5)
-
     def run(self):
         self.gaming = True
-        pygame.mixer.music.play(loops=-1, fade_ms=1000)
+        pygame.mixer.music.play(loops=-1, fade_ms=4000)
         while self.gaming:
             self.check_event()
             if self.gaming:

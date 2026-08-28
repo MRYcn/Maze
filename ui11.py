@@ -20,6 +20,8 @@ class UI11:
         self.confirm_suf.set_alpha((150))
         self.confirm_text = font2.render('确认', True, (0, 0, 0), None)
 
+        self.click_effect = game.click_effect
+
     def display(self):
         self.game.blit_to_sc(self.title, (642, 200), 0)
         self.back_rect = self.game.blit_to_sc(self.back_text, (125, 80), 0)
@@ -27,6 +29,7 @@ class UI11:
         self.game.blit_to_sc(self.confirm_text, (642, 450), 0)
 
     def update(self, press_pos):
+        self.click_effect.play()
         if self.back_rect.collidepoint(press_pos):
             self.game.st = 10
         elif self.confirm_rect.collidepoint(press_pos):
