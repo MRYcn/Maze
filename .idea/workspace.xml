@@ -8,25 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="添加点击音效">
-      <change afterPath="$PROJECT_DIR$/res/pic/coin_back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pic/coins/coin_9.png" afterDir="false" />
+    <list default="true" id="1ec7c00b-4d51-407a-adb2-c1dc6427b459" name="更改" comment="优化README协议表述。">
+      <change afterPath="$PROJECT_DIR$/map_tmp/map.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/map_tmp/map_generator2.0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2025_7_24_16_24____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2025_7_24_16_24_取消提交了更改_[更改]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/navigator.py" beforeDir="false" afterPath="$PROJECT_DIR$/navigator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pic/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/res/pic/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui4.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui7.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui7.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui9.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui9.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,17 +70,20 @@
     "Python.data.executor": "Run",
     "Python.main.executor": "Run",
     "Python.map_generator.executor": "Run",
+    "Python.map_generator2.executor": "Run",
     "Python.maps.executor": "Debug",
     "Python.ui10.executor": "Run",
     "Python.ui6.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/mry/下载/Maze/map_tmp",
+    "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "advanced.settings",
+    "settings.editor.selected.configurable": "settings.json.schema",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -110,6 +101,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\documents\pyprojects\Maze" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -162,6 +154,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="map_generator2" type="PythonConfigurationType" factoryName="Python">
+      <module name="Maze" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\documents\pyprojects\Maze\map_tmp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/map_tmp/map_generator2.0.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.map_generator2" />
+      <item itemvalue="Python.map_generator" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.map_generator" />
@@ -185,7 +206,13 @@
       <updated>1751866237341</updated>
       <workItem from="1787796298758" duration="1727000" />
       <workItem from="1787810775100" duration="4309000" />
-      <workItem from="1787884688077" duration="12760000" />
+      <workItem from="1787884688077" duration="13044000" />
+      <workItem from="1787916424728" duration="131000" />
+      <workItem from="1787971886768" duration="335000" />
+      <workItem from="1788323970163" duration="1308000" />
+      <workItem from="1788418533676" duration="3405000" />
+      <workItem from="1788431639333" duration="2031000" />
+      <workItem from="1788503959372" duration="10525000" />
     </task>
     <task id="LOCAL-00001" summary="initial push">
       <option name="closed" value="true" />
@@ -419,7 +446,23 @@
       <option name="project" value="LOCAL" />
       <updated>1787884756617</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="添加金币控件，处理金币存储，优化协议表述。">
+      <option name="closed" value="true" />
+      <created>1787906315532</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1787906315532</updated>
+    </task>
+    <task id="LOCAL-00031" summary="优化README协议表述。">
+      <option name="closed" value="true" />
+      <created>1787916547750</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1787916547750</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,8 +519,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="创建简单用户文件并实现读写" />
-    <MESSAGE value="创建用户数据页面" />
     <MESSAGE value="创建新手指导页面，优化游戏页面管理" />
     <MESSAGE value="创建新手指导页面，优化游戏页面管理。" />
     <MESSAGE value="将新手指导数据合并入地图数据，完善地图1、2、3。" />
@@ -501,9 +542,12 @@
     <MESSAGE value="更新，测试" />
     <MESSAGE value="优化文件格式，添加结算音效" />
     <MESSAGE value="添加点击音效" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加点击音效" />
+    <MESSAGE value="添加金币控件，处理金币存储，优化协议表述。" />
+    <MESSAGE value="优化README协议表述。" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化README协议表述。" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Maze$main.coverage" NAME="main 覆盖结果" MODIFIED="1787905999581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Maze$map_generator2.coverage" NAME="map_generator2 覆盖结果" MODIFIED="1788520264106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\documents\pyprojects\Maze\map_tmp" />
+    <SUITE FILE_PATH="coverage/Maze$main.coverage" NAME="main 覆盖结果" MODIFIED="1788520293800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

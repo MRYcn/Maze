@@ -46,6 +46,7 @@ class Navigator:
                 self.game.data['data']['map'].append(self.game.ui4.i + 1)
                 self.game.data['data']['coins'] += 10
                 self.game.ui4.update_progress()
+                self.game.ui9.coin_addition = 10
             self.game.ui4.update_coin()
             return
 
